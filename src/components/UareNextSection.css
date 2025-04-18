@@ -1,0 +1,86 @@
+.uare-next-section {
+  background: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.uare-next-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.uare-next-text h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.uare-next-text h3 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.uare-next-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  padding: 0 10px;
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+}
+
+/* Button Styling */
+.book-a-call-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffa500;
+  color: #fff;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  gap: 10px;
+}
+
+/* Icon Styling */
+.cta-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Hover Effect */
+.book-a-call-button:hover {
+  background-color: #e68900;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .uare-next-text h2 {
+    font-size: 2.2rem;
+  }
+
+  .uare-next-text h3 {
+    font-size: 1.8rem;
+  }
+
+  .uare-next-text p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .book-a-call-button {
+    padding: 14px 24px;
+    font-size: 16px;
+  }
+
+  .cta-icon {
+    width: 20px;
+    height: 20px;
+  }
+}

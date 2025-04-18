@@ -1,0 +1,97 @@
+/* Custom Icon */
+.custom-icon img {
+    border-radius: 50%; /* Ensures the image stays circular if it's square */
+    width: 52px;
+    height: 52px;
+    margin: 32px;
+  }
+  
+  /* Section Styling */
+  .whats-next-section {
+    background: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .whats-next-text h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .whats-next-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 50%;
+    margin: 0 auto 40px;
+  }
+  
+  /* Button Styling */
+  .get-started-button {
+    display: inline-flex;
+    align-items: center; /* Align icon and text vertically */
+    justify-content: center; /* Align both horizontally centered */
+    background-color: #ffa500;
+    color: #fff;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    gap: 10px; /* Adds space between the icon and the text */
+    margin-bottom: 32px;
+  }
+  
+  .cta-icon {
+    width: 24px; /* Adjust size of the icon */
+    height: 24px;
+  }
+  
+  /* Hover Effect */
+  .get-started-button:hover {
+    background-color: #e68900; /* Darker orange on hover */
+  }
+  
+  /* Optional: Icon Styling */
+  .icon-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .whats-next-image img {
+    width: 100%; /* Make image responsive */
+    max-width: 1440px;
+    height: auto;
+    border-radius: 16px;
+    margin: 0 auto;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .whats-next-text h2 {
+      font-size: 2rem;
+    }
+  
+    .whats-next-text p {
+      font-size: 1rem;
+      max-width: 90%;
+    }
+  
+    .get-started-button {
+      font-size: 16px;
+      padding: 14px 28px;
+    }
+  
+    .custom-icon img {
+      width: 42px;
+      height: 42px;
+      margin: 20px;
+    }
+  
+    .whats-next-image img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  

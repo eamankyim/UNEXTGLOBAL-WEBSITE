@@ -1,0 +1,178 @@
+.feature-section {
+    padding: 80px 20px;
+    background: #ffffff;
+  }
+  
+  .feature-heading {
+    font-size: 3rem;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+    color: #222;
+  }
+  
+  .feature-card {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 1440px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  
+  .feature-image {
+    flex: 1;
+    min-width: 320px;
+  }
+  
+  .feature-image img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 32px;
+  }
+  
+  .feature-text {
+    flex: 1;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    padding: 0px;
+    margin: 0;
+    max-width: 500px;
+  }
+  
+  .feature-list li {
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 24px 16px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: background 0.3s ease;
+  }
+  
+  .feature-list li:hover {
+    background: #f4f4f4;
+  }
+  
+  .feature-list li.active {
+    background: #FAF5ED;
+    font-weight: bold;
+  }
+  
+  .checkmark {
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+    border: 2px solid #ffa500;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+  
+  .feature-list li.active .checkmark {
+    background: #ffa500;
+  }
+  
+  .feature-cta {
+    margin-top: 32px;
+  }
+  
+  .get-started-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffa500;
+    color: #fff;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    gap: 10px;
+  }
+  
+  .get-started-button:hover {
+    background-color: #e68900;
+  }
+  
+  .cta-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+
+
+
+  
+@media (max-width: 768px) {
+
+
+
+    .feature-section {
+        padding: 20px 32px;
+      }
+      
+      .feature-heading {
+        font-size: 2rem;
+      }
+      
+      .feature-card {
+        gap: 16px;
+      }
+      
+      .feature-image img {
+        border-radius: 16px;
+      }
+      
+      
+      .feature-list li {
+        font-size: 12pt;
+        cursor: pointer;
+        padding: 12px 8px;
+        border-radius: 8px;
+        gap: 8px;
+       
+      }
+      
+      .feature-list li.active {
+        font-weight: 600;
+      }
+      
+      .checkmark {
+        width: 12px;
+        height: 12px;
+        min-width: 12px;
+        min-height: 12px;
+        border: 1px solid #ffa500;
+      }
+      
+      .feature-cta {
+        margin-top: 16px;
+        text-align: center;
+      }
+      
+   
+  }
+  

@@ -1,0 +1,197 @@
+.hero-section {
+  width: 100%;
+  padding: 10px 20px 0;
+  display: flex;
+  background: linear-gradient(to bottom, #FCF0E4, #ffffff); /* Orange to white */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.slider-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  max-width: 1500px;
+  height: 100%;
+  width: 100%;
+  overflow: visible; /* So the dots can extend outside */
+}
+
+.slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 40px;
+  border-radius: 48px;
+  box-sizing: border-box;
+  min-width: 300px; /* Ensure minimum width */
+  min-height: 400px; /* Ensure minimum height */
+  flex: 1; /* Distribute space equally */
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Different backgrounds per slide */
+.slide:nth-child(1) {
+  background: linear-gradient(to bottom, #ffffff, #C3E3E4);
+}
+.slide:nth-child(2) {
+  background: linear-gradient(to bottom, #fff3e0, #ffd180);
+}
+.slide:nth-child(3) {
+  background: linear-gradient(to bottom, #eefafc, #97d8e0);
+}
+.slide:nth-child(4) {
+  background: linear-gradient(to bottom, #f0e7f1, #c096c7);
+}
+.slide:nth-child(5) {
+  background: linear-gradient(to bottom, #e5f1e5, #95cf98);
+}
+
+.hero-text,
+.hero-image {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1; /* Equalize widths */
+}
+
+.hero-text {
+  padding-right: 20px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  min-height: 60px;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 90%;
+  color: #333;
+}
+
+.hero-image {
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  max-height: 400px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 24px;
+}
+
+/* Moved dots outside slider-wrapper */
+.slider-dots {
+  position: absolute;
+  top: 50%;
+  left: 99%;
+  transform: translateY(-50%) translateX(0px);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 5;
+}
+
+.slider-dots button {
+  padding: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: #bbb;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-dots button.active {
+  width: 10px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: #ffa500;
+}
+@media (max-width: 768px) {
+  .hero-section {
+   
+    padding: 1px 2px 0;
+   
+  }
+  
+  .slider-wrapper {
+   
+    padding: 16px;
+ 
+  }
+  
+
+
+  
+  .slide {
+    flex-direction: column; /* Stack text and image vertically */
+    padding: 32px;
+    min-height: 700px; /* Increased height for better spacing */
+    border-radius: 16px;
+  }
+
+  .hero-text {
+    padding-right: 0;
+    text-align: center;
+    margin-bottom: 0px;
+    height: fit-content;
+  }
+
+  .hero-image {
+    margin-top: 8px;
+  }
+
+  .hero-image img {
+    max-height: 300px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+
+  .hero-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 100%;
+    color: #333;
+  }
+
+  .hero-image {
+    text-align: center;
+  }
+
+  .hero-image img {
+    max-width: 100%;
+    max-height: 400px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 24px;
+  }
+
+  
+/* Moved dots outside slider-wrapper */
+.slider-dots {
+ display: none;
+}
+}

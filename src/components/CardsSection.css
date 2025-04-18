@@ -1,0 +1,101 @@
+.cards-section {
+    padding: 80px 24px;
+    background: linear-gradient(to bottom, #ffffff, #B3DCDD);
+    text-align: center;
+  }
+  
+  .cards-header {
+    font-size: 3rem;
+    margin-bottom: 48px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .card {
+    background: #fff;
+    border: 2px solid #ffffff;
+    border-radius: 24px;
+    padding: 32px;
+    text-align: left;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .card:hover {
+    box-shadow: 0 10px 20px rgba(31, 90, 87, 0.2);
+    transform: translateY(-5px);
+  }
+  
+  .card .icon {
+    font-size: 32px;
+    color: #009E9F;
+    margin-bottom: 16px;
+  }
+  
+  .card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    color: #333;
+  }
+  
+  .see-how {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: #009E9F;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+  }
+  
+  .see-how:hover {
+    text-decoration: none;
+    font-weight: 600;
+    transform: translateX(4px);
+  }
+  
+  @media (max-width: 768px) {
+    .cards-section {
+      padding: 40px 16px;
+      text-align: center; /* Center the content inside the section */
+    }
+  
+    .cards-header {
+      font-size: 2rem;
+      margin-bottom: 24px; /* Adjusted for better spacing */
+    }
+  
+    .cards-grid {
+      gap: 24px; /* Reduced gap between cards */
+      justify-items: center; /* Center the cards inside the grid */
+    }
+  
+    .card {
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(31, 90, 87, 0.1);
+      text-align: center; /* Center-align text inside the card */
+    }
+  
+    .card:hover {
+      box-shadow: 0 6px 12px rgba(31, 90, 87, 0.15);
+    }
+  }
+  
