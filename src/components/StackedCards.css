@@ -1,0 +1,19 @@
+/* src/components/StackedCards.css */
+.stacked-container {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  margin: 80px auto;
+  height: 550px; /* adjust based on content */
+}
+
+.stacked-card-wrapper {
+  position: absolute;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stacked-card-wrapper:hover {
+  transform: scale(1.01);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}

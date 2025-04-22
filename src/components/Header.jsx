@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
@@ -9,25 +10,22 @@ const Header = () => {
   };
 
   return (
-    <header className="header-wrapper">
-      <div className="container">
+    <header className="myheader-header-wrapper">
+      <div className="myheader-container">
         {/* Logo */}
-        <div className="logo">
+        <div className="myheader-logo">
           <img src="images/icons/unextlogo.png" alt="uNext Logo" />
         </div>
 
         {/* Navigation + CTA */}
-        <div className={`left-side ${menuOpen ? 'mobile-open' : ''}`}>
-          <nav className="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Consulting</a>
-            <a href="#">Solutions</a>
-            <a href="#">Blog</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+        <div className={`myheader-left-side ${menuOpen ? 'myheader-mobile-open' : ''}`}>
+          <nav className="myheader-nav-links">
+            <Link to="/">Home</Link>
+            <Link to="/about">About us</Link>
+            <Link to="/services">Our services</Link>
           </nav>
 
-          <div className="cta-button desktop-only">
+          <div className="myheader-cta-button myheader-desktop-only">
             <a
               href="https://wa.me/233555155972?text=Hi%20Unext%2C%20I'm%20interested%20in%20your%20services."
               target="_blank"
@@ -37,32 +35,31 @@ const Header = () => {
               <img
                 src="images/icons/whatsapp.svg"
                 alt="WhatsApp Icon"
-                className="cta-icon"
+                className="myheader-cta-icon"
               />
             </a>
           </div>
-          </div>
+        </div>
 
-          {/* Mobile Controls: WhatsApp Icon + Hamburger */}
-          <div className="mobile-controls">
-            <a
-              href="https://wa.me/233555155972?text=Hi%20Unext%2C%20I'm%20interested%20in%20your%20services."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mobile-call-icon"
-            >
-              <img src="images/icons/whatsapp.svg" alt="WhatsApp Icon" />
-            </a>
-            <div
-              className={`hamburger ${menuOpen ? 'open' : ''}`}
-              onClick={toggleMenu}
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
+        {/* Mobile Controls: WhatsApp Icon + Hamburger */}
+        <div className="myheader-mobile-controls">
+          <a
+            href="https://wa.me/233555155972?text=Hi%20Unext%2C%20I'm%20interested%20in%20your%20services."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="myheader-mobile-call-icon"
+          >
+            <img src="images/icons/whatsapp.svg" alt="WhatsApp Icon" />
+          </a>
+          <div
+            className={`myheader-hamburger ${menuOpen ? 'open' : ''}`}
+            onClick={toggleMenu}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
-
+        </div>
       </div>
     </header>
   );

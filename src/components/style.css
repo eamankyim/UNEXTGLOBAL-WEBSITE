@@ -1,0 +1,108 @@
+.whatwestandfor-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.whatwestandfor-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9fbfd;
+  border: 2px solid #007aff;
+  border-radius: 20px;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.whatwestandfor-content {
+  flex: 1;
+}
+
+.whatwestandfor-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #111;
+}
+
+.whatwestandfor-content p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.accordion-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.accordion {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.accordion.active {
+  background-color: #fff;
+  border-color: #007aff;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: #222;
+}
+
+.accordion-content {
+  margin-top: 0.5rem;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.accordion-icon {
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+
+.accordion-icon.active {
+  color: #ffa500;
+}
+
+.whatwestandfor-image {
+  flex-shrink: 0;
+  width: 300px;
+  max-width: 100%;
+}
+
+.whatwestandfor-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .whatwestandfor-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+
+  .whatwestandfor-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .whatwestandfor-image {
+    width: 60%;
+  }
+}

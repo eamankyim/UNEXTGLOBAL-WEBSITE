@@ -1,0 +1,176 @@
+.collab-wrapper {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    border-radius: 24px;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .collab-left {
+    flex: 0 0 28%;
+    padding: 2rem;
+    border: 1px solid #f4f4f4;
+    border-radius: 16px;
+  }
+  
+  .collab-left h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #111;
+  }
+  
+  .collab-left p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .collab-left ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .collab-left li {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #111;
+    margin-bottom: 1rem;
+  }
+  
+  .collab-left li::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid orange;
+    flex-shrink: 0;
+    margin-right: 8px;
+   
+  }
+  
+  /* Right section - partner cards */
+  .collab-right {
+    flex: 0 0 70%;
+    position: relative;
+    border: 1px solid #f4f4f4;
+    border-radius: 16px;
+    padding: 32px;
+    padding-top: 64px;
+    background-color: #ecf0f3;
+  }
+  
+  .partner-card {
+    
+    width: 70%;
+    background: linear-gradient(to bottom, #fff, #F5F7F9);
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Card content layout */
+  .card-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .card-logo {
+    flex: 0 0 30%;
+    display: flex;
+    background-color: rgba(250, 250, 250, 0.5);
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card-logo img {
+    width: 200px; /* or 100px for slightly bigger */
+    height: auto;
+    object-fit: contain;
+  }
+  
+  
+  .card-info {
+    flex: 1;
+    
+  }
+  
+  .card-info h4 {
+    font-size: 1.2rem;
+    color: #111;
+    font-weight: 600;
+    margin: 0 0 0.4rem;
+  }
+  
+  .card-info p {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0 0 0.4rem;
+  }
+  
+  .card-info span {
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 900px) {
+    .collab-wrapper {
+      flex-direction: column;
+      padding: 2rem 1.5rem;
+    }
+  
+    .collab-right {
+      position: relative;
+      padding: 1rem;
+      min-height: auto;
+      border: 1px solid #f4f4f4;
+      border-radius: 16px;
+      padding: 32px;
+      
+    }
+  
+    .partner-card {
+      position: static !important; /* overrides motion’s inline position:absolute */
+      transform: none !important;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  
+    .card-content {
+      flex-direction: row; /* or column if you'd rather stack logo and text */
+      gap: 1rem;
+    }
+  
+    .card-logo img {
+      width: 200px;
+    }
+  
+    .card-info h4 {
+      font-size: 1rem;
+    }
+  
+    .card-info p {
+      font-size: 0.9rem;
+    }
+  
+    .card-info span {
+      font-size: 0.8rem;
+    }
+  }
+  

@@ -1,37 +1,27 @@
+// App.js
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import './App.css';
-// Correct way to import (no file extension needed)
-import HeroSection from './components/HeroSection';
-import WhatsNextSection from "./components/WhatsNextSection";
-import FeatureSection from "./components/FeatureSection";
-import CardsSection from "./components/CardsSection";
-import TestimonialSection from "./components/TestimonialSection";
-import UareNextSection from "./components/UareNextSection";
-import ContactSection from "./components/ContactSection";
-import FooterSection from './components/FooterSection'; // Correct path
-
-
+import Home from "./pages/Home";
+import Services from "./pages/Services";
+import FooterSection from './components/FooterSection';
+import About from "./pages/About";
 
 const App = () => {
   return (
-    <div>
-      <Header />
-      <HeroSection />
-      <WhatsNextSection/>
-      <FeatureSection/>
-      <CardsSection/>
-      <TestimonialSection/>
-      <UareNextSection/>
-      <ContactSection/>
-      <FooterSection/>
-     
-    
-      
-    
-    
-   
-    </div>
+    <Router>
+      <div className="MainContainer">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="*" element={<div>404 - Not Found</div>} />
+        </Routes>
+        <FooterSection />
+      </div>
+    </Router>
   );
 };
 

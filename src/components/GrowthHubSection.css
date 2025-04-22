@@ -1,0 +1,44 @@
+.growth-hub-section {
+  background-color: #f4fcfd;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.content-wrapper {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.highlight {
+  color: #f59e0b; /* tailwind amber-500 or similar */
+}
+
+p {
+  color: #444;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.growth-hub-section .cta-button {
+  background-color: #f59e0b;
+  color: white;
+  padding: 016px;
+  border: none;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.growth-hub-section .cta-button:hover {
+  background-color: #d97706;
+}

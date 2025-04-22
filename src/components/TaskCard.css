@@ -1,0 +1,93 @@
+/* src/components/TaskCard.css */
+.task-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .task-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+  }
+  
+  .checkmark {
+    color: #4a90e2;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .task-title {
+    flex-grow: 1;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .task-title.completed {
+    text-decoration: line-through;
+    color: #aaa;
+  }
+  
+  .tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  
+  .tag {
+    font-size: 12px;
+    background-color: #eee;
+    color: #444;
+    border-radius: 6px;
+    padding: 2px 8px;
+    font-weight: 500;
+  }
+  
+  .tag.low {
+    background-color: #e0f8f4;
+    color: #3bb298;
+  }
+  
+  .task-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #666;
+  }
+  
+  .due-date {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .assignee {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .initials {
+    background-color: #ddd;
+    border-radius: 50%;
+    padding: 6px 10px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  

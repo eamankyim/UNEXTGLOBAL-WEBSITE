@@ -1,6 +1,7 @@
 .hero-section {
   width: 100%;
-  padding: 10px 20px 0;
+  padding: 250px 2rem 4rem;
+  margin-top: -170px;
   display: flex;
   background: linear-gradient(to bottom, #FCF0E4, #ffffff); /* Orange to white */
   justify-content: center;

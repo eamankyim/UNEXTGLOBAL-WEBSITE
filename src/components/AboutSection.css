@@ -1,0 +1,203 @@
+.aboutmission-wrapper {
+    position: relative;
+    background-color: #fefefe;
+    padding: 4rem 2rem;
+    overflow: hidden;
+    z-index: 0;
+  }
+  
+  .aboutmission-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .aboutmission-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  
+  .aboutmission-card {
+    flex: 1 1 55%;
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: 1px solid;
+    border-color: #f4f4f4;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #464646;
+  }
+  
+  .aboutmission-card.mission {
+    flex: 1 1 35%;
+  }
+  
+  .aboutmission-card h3 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: #111;
+  }
+  
+  /* Stats */
+  .aboutmission-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: flex-start;
+  }
+  
+  .aboutmission-stat {
+    flex: 1 1 150px;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #111;
+    font-weight: 500;
+    text-align: center;
+  }
+  .stat-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+  
+  .stat-icon-wrapper {
+    background-color: white;
+    border-radius: 50%;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    
+  }
+  
+  .stat-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+  
+  .stat-label {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    text-align: left;
+    width: 100%;
+    margin-top: 0.75rem;
+    align-self: flex-start;
+  }
+  
+  
+  .stat-blue {
+    background-color: #f0feff;
+  }
+  
+  .stat-peach {
+    background-color: #fff5ed;
+  }
+  
+  .stat-purple {
+    background-color: #f5f3ff;
+  }
+  
+  
+  /* Floating Arrows Animation */
+  .aboutmission-arrow {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.25;
+    animation: float 10s ease-in-out infinite;
+  }
+  
+  .aboutmission-arrow.left {
+    top: 2rem;
+    left: -0.1rem;
+    width: 200px;
+    animation-delay: 0s;
+  }
+  
+  .aboutmission-arrow.right {
+    bottom: -2rem;
+    right: -0.1rem;
+    width: 200px;
+    animation-delay: 2s;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-40px) rotate(8deg);
+    }
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+
+    .aboutmission-wrapper {
+      padding: 0rem 1.5rem;
+    }
+    .aboutmission-cards {
+      flex-direction: column;
+    }
+  
+    .aboutmission-card,
+    .aboutmission-card.mission {
+      flex: 1 1 100%;
+    }
+  
+    .aboutmission-stats {
+      flex-direction: column;
+    }
+  
+  
+    
+
+    .aboutmission-stat {
+      padding: 1rem;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+    }
+    
+    .stat-icon-wrapper {
+      width: 58px;
+      height: 58px;
+      padding: 6px;
+    }
+    
+    .stat-icon {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .stat-label {
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+    
+  }
+  
