@@ -168,17 +168,22 @@
 @media screen and (max-width: 768px) {
   .footer-section {
     padding: 24px 8px;
+    
   }
 
   .footer-wrapper {
     padding: 32px;
+    text-align: center;
   }
 
   .footer-top {
     flex-direction: column;
     align-items: center;
   }
-
+  input[type="email"] {
+    text-align: center;
+  }
+  
   .footer-subscribe {
     width: 100%;
   }

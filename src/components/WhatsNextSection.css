@@ -3,7 +3,7 @@
     border-radius: 50%; /* Ensures the image stays circular if it's square */
     width: 52px;
     height: 52px;
-    margin: 32px;
+    margin-bottom: 2rem;
   }
   
   /* Section Styling */
@@ -59,12 +59,22 @@
     margin-bottom: 20px;
   }
   
-  .whats-next-image img {
-    width: 100%; /* Make image responsive */
+  .whats-next-video {
+    width: 100%;
     max-width: 1440px;
+    margin: 2rem auto;
+    border: 2rem solid #fff; /* Centers the container horizontally and adds vertical spacing */
+    border-radius: 2rem;
+    overflow: hidden; /* Ensures video respects the border radius */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Light soft shadow */
+  }
+  
+  .whats-next-video video {
+    width: 100%;
     height: auto;
-    border-radius: 16px;
-    margin: 0 auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 16px; /* Optional: same as container, or let container clip */
   }
   
   /* Responsive Styles */
@@ -86,12 +96,14 @@
     .custom-icon img {
       width: 42px;
       height: 42px;
-      margin: 20px;
+      margin: 0;
+      margin-bottom: 12px;
     }
-  
-    .whats-next-image img {
-      width: 100%;
-      max-width: 100%;
+    .whats-next-video {
+     
+      margin: 1rem auto;
+      border: .5rem solid #fff; /* Centers the container horizontally and adds vertical spacing */
+      
     }
   }
   

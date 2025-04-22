@@ -1,9 +1,9 @@
 .hero-section {
   width: 100%;
-  padding: 250px 2rem 4rem;
-  margin-top: -170px;
+  padding: 10rem 2rem 1rem;
+  margin-top: -11rem;
   display: flex;
-  background: linear-gradient(to bottom, #FCF0E4, #ffffff); /* Orange to white */
+  background: linear-gradient(to bottom, #FCF0E4, #ffffff);
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -14,11 +14,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
-  max-width: 1500px;
-  height: 100%;
+  padding: 3rem 0 0 1rem;
+  max-width: 1440px;
   width: 100%;
-  overflow: visible; /* So the dots can extend outside */
+  height: 100%;
+  overflow: visible;
 }
 
 .slide {
@@ -28,17 +28,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 60px 40px;
-  border-radius: 48px;
+  padding: 3rem 2rem;
+  border-radius: 2rem;
   box-sizing: border-box;
-  min-width: 300px; /* Ensure minimum width */
-  min-height: 400px; /* Ensure minimum height */
-  flex: 1; /* Distribute space equally */
-}
-
-.slide.active {
-  opacity: 1;
-  z-index: 2;
+  min-width: 300px;
+  min-height: 500px;
+  flex: 1;
+  will-change: transform, opacity;
+  cursor: grab;
 }
 
 /* Different backgrounds per slide */
@@ -64,7 +61,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex: 1; /* Equalize widths */
+  flex: 1;
 }
 
 .hero-text {
@@ -98,16 +95,11 @@
   object-fit: contain;
   border-radius: 24px;
 }
-
-/* Moved dots outside slider-wrapper */
 .slider-dots {
-  position: absolute;
-  top: 50%;
-  left: 99%;
-  transform: translateY(-50%) translateX(0px);
+  left: 50%;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  flex-direction: row;
+  gap: 5px;
   z-index: 5;
 }
 
@@ -123,32 +115,30 @@
 }
 
 .slider-dots button.active {
-  width: 10px;
-  height: 48px;
-  border-radius: 12px;
+  width: 60px;
+  height: 10px;
+  border-radius: 5px;
   background-color: #ffa500;
 }
+
+
+/* Mobile styles */
 @media (max-width: 768px) {
   .hero-section {
-   
-    padding: 1px 2px 0;
-   
+    padding: 8rem 1.5rem 1rem;
+    margin-top: -7rem;
   }
-  
+
   .slider-wrapper {
-   
-    padding: 16px;
- 
+    padding: 0px;
   }
-  
 
-
-  
   .slide {
-    flex-direction: column; /* Stack text and image vertically */
+    flex-direction: column;
     padding: 32px;
-    min-height: 700px; /* Increased height for better spacing */
+    min-height: 600px;
     border-radius: 16px;
+    cursor: grab;
   }
 
   .hero-text {
@@ -159,7 +149,8 @@
   }
 
   .hero-image {
-    margin-top: 8px;
+    margin-top: 0px;
+
   }
 
   .hero-image img {
@@ -178,21 +169,8 @@
     color: #333;
   }
 
-  .hero-image {
-    text-align: center;
+  .slider-dots {
+    display: block;
+    margin-bottom: -3rem;
   }
-
-  .hero-image img {
-    max-width: 100%;
-    max-height: 400px;
-    height: auto;
-    object-fit: contain;
-    border-radius: 24px;
-  }
-
-  
-/* Moved dots outside slider-wrapper */
-.slider-dots {
- display: none;
-}
 }

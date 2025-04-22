@@ -173,10 +173,10 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
   .myheader-header-wrapper {
     
-    padding: 1px 16px;
+    padding: 1px 24px;
   }
 
   .myheader-container {
@@ -207,6 +207,12 @@ body {
   .myheader-hamburger {
     display: flex;
   }
+
+  .myheader-cta-button.myheader-desktop-only a {
+    background-color: #00b66a;
+  
+  }
+  
 }
 
 @media (max-width: 768px) {

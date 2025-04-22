@@ -9,6 +9,10 @@ const Header = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const handleNavClick = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <header className="myheader-header-wrapper">
       <div className="myheader-container">
@@ -20,14 +24,15 @@ const Header = () => {
         {/* Navigation + CTA */}
         <div className={`myheader-left-side ${menuOpen ? 'myheader-mobile-open' : ''}`}>
           <nav className="myheader-nav-links">
-            <Link to="/">Home</Link>
-            <Link to="/about">About us</Link>
-            <Link to="/services">Our services</Link>
+            <Link to="/" onClick={handleNavClick}>Home</Link>
+            <Link to="/about" onClick={handleNavClick}>About us</Link>
+            <Link to="/services" onClick={handleNavClick}>Our services</Link>
+            {/* Add more links here */}
           </nav>
 
           <div className="myheader-cta-button myheader-desktop-only">
             <a
-              href="https://wa.me/233555155972?text=Hi%20Unext%2C%20I'm%20interested%20in%20your%20services."
+              href="https://wa.me/233209735525?text=Hi%20Unext%2C%20I'm%20interested%20in%20your%20services."
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -44,7 +49,7 @@ const Header = () => {
         {/* Mobile Controls: WhatsApp Icon + Hamburger */}
         <div className="myheader-mobile-controls">
           <a
-            href="https://wa.me/233555155972?text=Hi%20Unext%2C%20I'm%20interested%20in%20your%20services."
+            href="https://wa.me/233209735525?text=Hello%20Unext%2C%20I%27m%20interested%20in%20your%20services."
             target="_blank"
             rel="noopener noreferrer"
             className="myheader-mobile-call-icon"

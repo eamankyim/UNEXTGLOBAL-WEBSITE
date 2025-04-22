@@ -1,6 +1,8 @@
 .feature-section {
-    padding: 80px 20px;
+    padding: 4rem 2rem;
     background: #ffffff;
+    height: max-content;
+    
   }
   
   .feature-heading {
@@ -21,9 +23,10 @@
     gap: 32px;
     align-items: flex-start;
     justify-content: center;
-    max-width: 1440px;
+    max-width: 1200px;
     margin: 0 auto;
     flex-wrap: wrap;
+   
   }
   
   .feature-image {
@@ -53,7 +56,7 @@
     gap: 0px;
     padding: 0px;
     margin: 0;
-    max-width: 500px;
+    max-width: 600px;
   }
   
   .feature-list li {
@@ -73,7 +76,7 @@
   
   .feature-list li.active {
     background: #FAF5ED;
-    font-weight: bold;
+    font-size: 1.2rem;
   }
   
   .checkmark {
@@ -129,9 +132,10 @@
 @media (max-width: 768px) {
 
 
-
     .feature-section {
-        padding: 20px 32px;
+        padding: 20px 1.5rem;
+        align-items: center;
+        justify-content: center;
       }
       
       .feature-heading {
@@ -157,7 +161,7 @@
       }
       
       .feature-list li.active {
-        font-weight: 600;
+        font-size: 1.1rem;
       }
       
       .checkmark {

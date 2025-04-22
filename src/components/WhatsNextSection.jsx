@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './WhatsNextSection.css';
+import whatsNextVideo from '/videos/whatsnext.mp4'; // Adjust path as needed
 
 const WhatsNextSection = () => {
   return (
@@ -48,14 +49,19 @@ const WhatsNextSection = () => {
           </a>
         </motion.div>
 
-        <div className="whats-next-image">
-          <motion.img
-            src="images/whatsnextimage.png"
-            alt="Business Growth"
+        <div className="whats-next-video">
+          <motion.video
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-          />
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src={whatsNextVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </motion.video>
         </div>
       </div>
     </section>

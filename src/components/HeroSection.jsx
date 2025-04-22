@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import "./HeroSection.css"; // Include your custom styles
+import "./HeroSection.css";
 
 const HeroSection = () => {
   const slides = [
@@ -39,9 +39,16 @@ const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
 
+  const prevSlide = () => {
+    setCurrentSlide((prev) =>
+      prev === 0 ? slides.length - 1 : prev - 1
+    );
+  };
+
+  // Autoplay
   useEffect(() => {
     const interval = setInterval(nextSlide, 7000);
     return () => clearInterval(interval);
@@ -49,49 +56,61 @@ const HeroSection = () => {
 
   return (
     <section className="hero-section">
-    <div className="slider-wrapper">
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentSlide}
-          className="slide active"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -30 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-        >
+      <div className="slider-wrapper">
+        <AnimatePresence mode="wait" initial={false}>
           <motion.div
-            className="hero-text"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+            key={currentSlide}
+            className="slide active"
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.3}
+            onDragEnd={(e, info) => {
+              if (info.offset.x < -100) {
+                nextSlide();
+              } else if (info.offset.x > 100) {
+                prevSlide();
+              }
+            }}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
           >
-            <h1 className="typewriter">{slides[currentSlide].text}</h1>
-            <p>{slides[currentSlide].description}</p>
+            <motion.div
+              className="hero-text"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              <h1 className="typewriter">{slides[currentSlide].text}</h1>
+              <p>{slides[currentSlide].description}</p>
+            </motion.div>
+            <motion.div
+              className="hero-image"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3 }}
+            >
+              <img
+                src={slides[currentSlide].image}
+                alt={`Slide ${currentSlide + 1}`}
+              />
+            </motion.div>
           </motion.div>
-          <motion.div
-            className="hero-image"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            <img src={slides[currentSlide].image} alt={`Slide ${currentSlide + 1}`} />
-          </motion.div>
-        </motion.div>
-      </AnimatePresence>
-  
-      {/* Move this outside the animation block */}
-      <div className="slider-dots">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            className={`dot ${index === currentSlide ? "active" : ""}`}
-            onClick={() => setCurrentSlide(index)}
-          ></button>
-        ))}
+        </AnimatePresence>
+
+       
       </div>
-    </div>
-  </section>
-  
+      <div className="slider-dots">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              className={`dot ${index === currentSlide ? "active" : ""}`}
+              onClick={() => setCurrentSlide(index)}
+            ></button>
+          ))}
+        </div>
+    </section>
   );
 };
 
