@@ -1,170 +1,176 @@
 /* FloatingImpactSection.css */
-
-
-.serviceshero-wrapper1 {
-    width: 100%;
-    padding: 250px 2rem 4rem;
-    margin-top: -170px;
-    background: linear-gradient(
-      to bottom,
+.unext-serviceshero-wrapper {
+  width: 100%;
+  padding: 250px 2rem 4rem;
+  margin-top: -170px;
+  background: linear-gradient(
+    to bottom,
     #FEDDFF 0%,
-      #fffcfe 90%,
-      transparent 100%
-    );
-   
-    align-items: center;
-  }
-  
- 
-  
+    #fffcfe 90%,
+    transparent 100%
+  );
+  background-size: 100% 800px;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 
-  @media (max-width: 768px) {
-    .serviceshero-wrapper1 {
-      padding: 180px 1.2rem 3rem;
-      margin-top: -150px;
-      margin-bottom: 0px;
-      background-size: 100% 600px;
-      background-repeat: no-repeat;
-    }
-   
-  
+@media (max-width: 768px) {
+  .unext-serviceshero-wrapper1 {
+    padding: 180px 1.2rem 3rem;
+    margin-top: -150px;
+    margin-bottom: 0px;
+    background-size: 100% 600px;
+    background-repeat: no-repeat;
   }
-  
-.floating-section {
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-   
-    text-align: center;
-  }
-  
-  .floating-bg {
-    position: absolute;
-    top: -300px;
-    left: 50%;
-    width: 1000px;
-    height: 1000px;
-  
-    transform: translateX(-50%);
-    z-index: 0;
-  }
-  
-  .floating-content {
-    position: relative;
-    z-index: 2;
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-  
-  .floating-content h2 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: #000;
-  }
-  
-  .floating-content .highlight {
-    color: #FF9D00;
-  }
-  
-  .floating-content p {
-    font-size: 1.5rem;
-    margin-top: 12px;
-    margin-bottom: 60px;
-    color: #333;
-  }
-  
-  /* Floating Cards Random Positioning */
-  .floating-cards {
-    position: relative;
-    width: 100%;
-    height: 400px;
+}
 
+.unext-floating-section {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.unext-floating-bg {
+  position: absolute;
+  top: -300px;
+  left: 50%;
+  width: 1000px;
+  height: 1000px;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.unext-floating-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.unext-floating-content h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.unext-floating-content .unext-highlight {
+  color: #FF9D00;
+}
+
+.unext-floating-content p {
+  font-size: 1.5rem;
+  margin-top: 12px;
+  margin-bottom: 60px;
+  color: #333;
+}
+
+.unext-floating-cards {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.unext-floating-card {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  padding: 16px;
+  max-width: 500px;
+  width: fit-content;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+  text-align: left;
+  transition: transform 0.3s ease;
+  height: auto;
+  min-height: 0;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+.unext-floating-card img {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.unext-card-text strong {
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0;
+  display: block;
+  color: #000;
+}
+
+.unext-card-text p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Slight random card positions */
+.unext-floating-card:nth-child(1) { top: 2%; left: 0%; transform: rotate(4deg); }
+.unext-floating-card:nth-child(2) { top: 10%; left: 38%; transform: rotate(0deg); }
+.unext-floating-card:nth-child(3) { top: 0%; left: 75%; transform: rotate(-9deg); }
+.unext-floating-card:nth-child(4) { top: 35%; left: 10%; transform: rotate(0deg); }
+.unext-floating-card:nth-child(5) { top: 45%; left: 38%; transform: rotate(0deg); }
+.unext-floating-card:nth-child(6) { top: 35%; left: 67%; transform: rotate(0deg); }
+.unext-floating-card:nth-child(7) { top: 66%; left: 15%; transform: rotate(0deg); }
+.unext-floating-card:nth-child(8) { top: 66%; left: 70%; transform: rotate(0deg); }
+
+@media (max-width: 900px) {
+  .unext-serviceshero-wrapper {
+    padding: 180px 1.2rem 3rem;
+    margin-top: -150px;
+    background-size: 100% 600px;
   }
-  
-  .floating-card {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.5);
-    border: 2px solid #fff;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-    border-radius: 16px;
-    padding: 16px;
-    max-width: 500px;
-    width: fit-content; /* 👈 tightly fit to content */
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 16px;
-    text-align: left;
-    transition: transform 0.3s ease;
+
+  .unext-floating-content h2 {
+    font-size: 2rem;
+  }
+
+  .unext-floating-content p {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+  }
+
+  .unext-floating-cards {
     height: auto;
-    min-height: 0; /* 👈 allow to shrink */
-    overflow: visible;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
   }
-  
-  
-  .floating-card img {
-    width: 32px;
-    height: 32px;
-    flex-shrink: 0;
+
+  .unext-floating-card {
+    position: relative;
+    width: 100%;
+    max-width: 90%;
+    transform: none !important; /* disable float/rotate styles */
+    opacity: 1 !important; /* override framer-motion animation if needed */
+    border-radius: 14px;
+    padding: 1rem;
+    gap: 12px;
   }
-  
-  .card-text strong {
-    font-weight: 600;
+
+  .unext-floating-card img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .unext-card-text strong {
     font-size: 1rem;
-    margin: 0;
-    display: block;
-    color: #000;
   }
-  
-  
-  .card-text p {
-    font-size: 0.9rem;
-    color: #555;
-    margin: 0; /* 👈 reset margin */
-    line-height: 1.4; /* 👈 control spacing */
-  }
-  
-  /* Slight random card positions */
-  
-  .floating-card:nth-child(1) {  top: 2%; left: 0%; transform: rotate(4deg); }
-  .floating-card:nth-child(2) {  top: 10%; left: 38%; transform: rotate(0deg); }
-  .floating-card:nth-child(3) {  top: 0%; left: 75%; transform: rotate(-9deg); }
-  .floating-card:nth-child(4) {  top: 35%; left: 10%; transform: rotate(0deg); }
-  .floating-card:nth-child(5) {  top: 45%; left: 38%; transform: rotate(0deg); }
-  .floating-card:nth-child(6) {  top: 35%; left: 67%; transform: rotate(0deg); }
-  .floating-card:nth-child(7) {  top: 66%; left: 15%; transform: rotate(0deg); }
-  .floating-card:nth-child(8) {  top: 66%; left: 70%; transform: rotate(0deg); }
- 
-  
-  
 
-
-
-  .floating-card:nth-child(1):hover {
-    top: 0%;
-    left: 1%;
-    transform: rotate(-3deg);
+  .unext-card-text p {
+    font-size: 0.85rem;
   }
-  .floating-card:hover {
-    transform: translateY(-4px);
-  }
-  
- 
-  /* Responsive fallback to column layout */
-  @media (max-width: 900px) {
-    .floating-cards {
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
-  
-    .floating-card {
-      position: static;
-      width: 90%;
-    }
-  }
-  
+}

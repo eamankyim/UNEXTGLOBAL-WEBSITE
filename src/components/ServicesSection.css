@@ -126,39 +126,39 @@
   .card-button:hover {
     background-color: #000000;
   }
-  @media (max-width: 1024px) {
-    .row-1-wrapper,
-    .row-3-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: flex-start;
-    }
-  
-    .row-1-wrapper .service-card,
-    .row-3-wrapper .service-card {
-      width: calc((100% - 2rem) / 2); /* 2 per row on tablet */
-    }
-  
-    /* If the third card wraps alone, make it span full width */
-    .row-1-wrapper .service-card:nth-child(3):nth-last-child(1),
-    .row-3-wrapper .service-card:nth-child(3):nth-last-child(1) {
-      width: 100%;
-    }
-  
-    /* row-2-wrapper stays two per row */
-    .row-2-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: flex-start;
-    }
-  
-    .row-2-wrapper .service-card {
-      width: calc((100% - 2rem) / 2);
-    }
+ @media (max-width: 1024px) {
+  .row-1-wrapper,
+  .row-3-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: flex-start;
   }
-  
+
+  .row-1-wrapper .service-card,
+  .row-3-wrapper .service-card {
+    width: calc((100% - 2rem) / 2); /* 2 per row on tablet */
+  }
+
+  /* If the third card wraps alone, make it span full width */
+  .row-1-wrapper .service-card:nth-child(3):nth-last-child(1),
+  .row-3-wrapper .service-card:nth-child(3):nth-last-child(1) {
+    width: 100%;
+  }
+
+  /* row-2-wrapper stays two per row */
+  .row-2-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: flex-start;
+  }
+
+  .row-2-wrapper .service-card {
+    width: calc((100% - 2rem) / 2);
+  }
+}
+
   
   
   /* Phone (≤768px): 1 card per row */

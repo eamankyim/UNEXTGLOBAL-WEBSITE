@@ -1,0 +1,132 @@
+/* WiggleCardSection.css */
+.unext-wiggle-wrapper {
+  width: 100%;
+  padding: 250px 2rem 4rem;
+  margin-top: -170px;
+  background: linear-gradient(to bottom, #FEDDFF 0%, #fffcfe 80%, transparent 100%);
+  background-size: 100% 800px;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.unext-wiggle-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.unext-wiggle-inner h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.unext-highlight {
+  color: #FF9D00;
+}
+
+.unext-wiggle-inner p {
+  font-size: 1.5rem;
+  margin-top: 12px;
+  margin-bottom: 60px;
+  color: #333;
+}
+
+.unext-wiggle-card-area {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.unext-wiggle-card {
+  background: rgba(255, 255, 255, .5);
+  border: 2px solid #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  padding: 32px;
+  width: fit-content; /* This makes the card hug its content */
+  max-width: 90vw;     /* Prevents overflow on small screens */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  text-align: left;
+}
+
+.unext-wiggle-card img {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.unext-card-text strong {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 0;
+  display: block;
+  color: #000;
+}
+
+.unext-card-text p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .unext-wiggle-wrapper {
+    padding: 180px 1.2rem 3rem;
+    margin-top: -150px;
+    background: linear-gradient(to bottom, #f1c2f3 0%, #fffcfe 99%, transparent 100%);
+  }
+
+  .unext-wiggle-card {
+    width: 100%;
+  }
+
+  .unext-wiggle-inner h2 {
+    font-size: 2rem;
+  }
+  
+  .unext-wiggle-inner p {
+    font-size: 1.2rem;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    
+  }
+  
+  .unext-wiggle-card-area {
+    position: relative;
+    width: 100%;
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .unext-wiggle-card {
+
+    padding: 16px;
+    width: fit-content; /* This makes the card hug its content */
+  max-width: 90vw;     /* Prevents overflow on small screens */
+
+  }
+  
+  .unext-card-text strong {
+    font-size: 1rem;
+  }
+  
+  .unext-card-text p {
+    font-size: .9rem;
+    color: #555;
+    margin: 0;
+    line-height: 1;
+  }
+
+}

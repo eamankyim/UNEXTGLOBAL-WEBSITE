@@ -10,14 +10,17 @@ import FaqSection from "../components/FaqSection";
 import FloatingImpactSection from "../components/FloatingImpactSection";
 import ServicesSection from "../components/ServicesSection";
 import TeamHighlightSection from "../components/TeamHighlightSection";
+import WiggleCardSection from "../components/WiggleCardSection";
 
 
 const Services = () => {
   return (
     <>
-    <FloatingImpactSection />
+   
+    <WiggleCardSection />
     <ServicesSection />
     <TeamHighlightSection />
+    <FaqSection />
   
   
    

@@ -1,55 +1,64 @@
 .team-highlight-section {
-  background-color: #F6F4FF;
+  padding: 4rem 2rem;
+  background-color: #f5f6fa;
+  display: flex;
+  justify-content: center;
   text-align: center;
-  padding: 4rem 1rem;
 }
 
 .content-container {
-  max-width: 700px;
-  margin: 0 auto;
+  max-width: 800px;
 }
 
 h2 {
-  font-size: 1.75rem;
-  line-height: 2.25rem;
-  font-weight: 600;
+  font-size: 2rem;
   margin-bottom: 1rem;
+  line-height: 1.4;
 }
 
 .bold {
-  color: #000;
   font-weight: 700;
 }
 
 .highlight {
-  color: #f79c1f;
-  font-weight: 700;
+  color: #FF9D00;
 }
 
 p {
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.6;
+  font-size: 1.125rem;
   margin-bottom: 2rem;
+  color: #444;
 }
 
 .cta-button {
+  background-color: #FF9D00;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 0.5rem;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 0.5rem;
-  padding: 0.6rem 1.25rem;
-  font-size: 0.875rem;
-  font-weight: 600;
-  background-color: #f79c1f;
-  color: white;
-  text-decoration: none;
-  border-radius: 9999px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s;
 }
 
 .cta-button:hover {
-  background-color: #f38700;
-  transform: translateY(-1px);
+  background-color: #FF9D00;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+  
+    justify-content: center;
+  }
 }
