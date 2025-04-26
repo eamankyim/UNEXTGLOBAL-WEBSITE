@@ -1,0 +1,191 @@
+
+.pricing-wrapper {
+    width: 100%;
+    padding: 250px 1rem 2rem;
+    margin: 0 auto;
+    margin-top: -170px;
+    background: 
+    linear-gradient(to bottom, rgba(207, 229, 255, 0.8) 0%, rgba(255, 252, 254, 0.8) 80%, transparent 100%);
+    min-height: 400px; /* or whatever makes sense */
+    background-size: 100% 900px, 30px 30px;
+    background-repeat: no-repeat, repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.pricing-section {
+ 
+  max-width: 1440px;
+    margin: 0 auto; /* Center the section horizontally */
+    font-family: 'Inter', sans-serif;
+
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 1rem; /* Reduced margin to push elements upwards */
+    flex-grow: 0; /* Keeps the header at the top */
+}
+
+.pricing-header h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.pricing-header h2 span {
+    color: #f8a100; /* The orange for "serious brands" */
+    margin-bottom: 2rem;
+}
+
+.pricing-header p {
+    font-size: 1.5rem;
+    color: #000000;
+    line-height: 1.5;
+}
+
+.pricing-cards {
+    margin-top: 5rem;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: left;
+    flex-wrap: wrap;
+    align-items: stretch; /* Ensures all cards stretch to equal height */
+}
+
+.pricing-card {
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #e6e4e4;
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    text-align: left;
+    flex: 1; /* Ensures all cards take the same height */
+    transition: transform 0.3s ease; /* smooth scaling */
+}
+
+
+.pricing-card:hover {
+    border: 1px solid #000000;
+    transform: scale(1.01); /* slightly enlarge on hover */
+  
+}
+.featured {
+    background: #000;
+    color: #fff;
+    transition: transform 0.3s ease; /* smooth scaling */
+}
+.featured:hover {
+ 
+    transform: scale(1.01); /* slightly enlarge on hover */
+  
+}
+.pricing-badge {
+    background: #009E9F;
+    color: #fff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0 15px 0 16px;
+    font-size: 1rem;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.pricing-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.pricing-subtitle {
+    font-size: 1rem;
+    color: #3d3d3d;
+    margin-bottom: 1rem;
+}
+
+.featured .pricing-subtitle {
+    color: #ccc;
+}
+
+.pricing-price {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.pricing-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-grow: 1; /* This makes the features section grow and push the buttons down */
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+}
+
+.feature-icon {
+    color: #000000; /* Green check */
+    font-family: 'FontAwesome'; /* Ensure FontAwesome is being used */
+}
+
+.featured .feature-icon {
+    color: #ffffff;
+}
+
+.pricing-buttons {
+    margin-top: 2rem; /* Pushes the buttons to the bottom */
+    display: flex;
+    gap: 1rem;
+   
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid #000;
+    color: #000;
+    font-size: 16px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    flex: 1;
+}
+
+.featured .btn-outline {
+    border-color: #fff;
+    color: #fff;
+}
+.featured .btn-primary {
+    color: #000;
+    background-color: #fff;
+}
+
+.btn-primary {
+    background: #000000;
+    border: none;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    font-size: 16px;
+    border-radius: 8px;
+    font-weight: 550;
+    cursor: pointer;
+    flex: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pricing-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}

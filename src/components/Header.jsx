@@ -1,21 +1,29 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const location = useLocation();
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const handleNavClick = () => setMenuOpen(false);
 
-  const handleNavClick = () => {
-    setMenuOpen(false);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setShowHeader(currentScrollY < lastScrollY);
+      setLastScrollY(currentScrollY);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   return (
-    <header className="myheader-header-wrapper">
-      <div className="myheader-container">
+    <header className={`myheader-header-wrapper ${showHeader ? '' : 'myheader-hidden'}`}>
+      <div className={`myheader-container ${showHeader ? 'myheader-scroll-up' : ''}`}>
         {/* Logo */}
         <div className="myheader-logo">
           <img src="images/icons/unextlogo.png" alt="uNext Logo" />
@@ -24,10 +32,35 @@ const Header = () => {
         {/* Navigation + CTA */}
         <div className={`myheader-left-side ${menuOpen ? 'myheader-mobile-open' : ''}`}>
           <nav className="myheader-nav-links">
-            <Link to="/" onClick={handleNavClick}>Home</Link>
-            <Link to="/about" onClick={handleNavClick}>About us</Link>
-            <Link to="/services" onClick={handleNavClick}>Our services</Link>
-            {/* Add more links here */}
+            <Link
+              to="/"
+              onClick={handleNavClick}
+              className={location.pathname === '/' ? 'myheader-active-link' : ''}
+            >
+              Home
+            </Link>
+            <Link
+              to="/about"
+              onClick={handleNavClick}
+              className={location.pathname === '/about' ? 'myheader-active-link' : ''}
+            >
+              About us
+            </Link>
+            <Link
+              to="/services"
+              onClick={handleNavClick}
+              className={location.pathname === '/services' ? 'myheader-active-link' : ''}
+            >
+              Our services
+            </Link>
+
+            <Link
+  to="/pricing"
+  onClick={handleNavClick}
+  className="myheader-nav-link myheader-pricing-tab"
+>
+  Pricing
+</Link>
           </nav>
 
           <div className="myheader-cta-button myheader-desktop-only">
@@ -37,16 +70,12 @@ const Header = () => {
               rel="noopener noreferrer"
             >
               Let's talk
-              <img
-                src="images/icons/whatsapp.svg"
-                alt="WhatsApp Icon"
-                className="myheader-cta-icon"
-              />
+              <img src="images/icons/whatsapp.svg" alt="WhatsApp Icon" className="myheader-cta-icon" />
             </a>
           </div>
         </div>
 
-        {/* Mobile Controls: WhatsApp Icon + Hamburger */}
+        {/* Mobile Controls */}
         <div className="myheader-mobile-controls">
           <a
             href="https://wa.me/233209735525?text=Hello%20Unext%2C%20I%27m%20interested%20in%20your%20services."
@@ -56,10 +85,7 @@ const Header = () => {
           >
             <img src="images/icons/whatsapp.svg" alt="WhatsApp Icon" />
           </a>
-          <div
-            className={`myheader-hamburger ${menuOpen ? 'open' : ''}`}
-            onClick={toggleMenu}
-          >
+          <div className={`myheader-hamburger ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
             <span></span>
             <span></span>
             <span></span>

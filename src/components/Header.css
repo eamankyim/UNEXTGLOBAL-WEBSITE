@@ -8,10 +8,21 @@ body {
   font-family: 'Geist', sans-serif;
   background-color: #ffffff;
 }
-
 .myheader-header-wrapper {
-  background: none;
+  background: transparent; /* explicitly transparent */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   padding: 10px 50px;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+
+
+
+.myheader-hidden {
+  transform: translateY(-100%);
 }
 
 .myheader-container {
@@ -20,13 +31,22 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffffff33;
+  background-color: transparent; /* change this */
   padding: 8px 32px 8px 8px;
-  border: 2px solid #fff;
+  border: 2px solid transparent; /* match background to avoid visible border before scroll */
   border-radius: 32px;
   box-sizing: border-box;
   gap: 32px;
   position: relative;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease;
+}
+
+.myheader-container.myheader-scroll-up {
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-color: #fff;
+  z-index: 9999;
 }
 
 .myheader-left-side {
@@ -59,6 +79,13 @@ body {
 .myheader-nav-links a:hover {
   color: #ffa500;
 }
+
+.myheader-nav-links a.myheader-active-link {
+  font-weight: 700;
+  color: #000000; /* uNext primary brand color */
+  
+}
+
 
 .myheader-cta-button.myheader-desktop-only {
   display: flex;
@@ -175,7 +202,6 @@ body {
 /* Responsive */
 @media (max-width: 1000px) {
   .myheader-header-wrapper {
-    
     padding: 1px 24px;
   }
 
@@ -210,11 +236,24 @@ body {
 
   .myheader-cta-button.myheader-desktop-only a {
     background-color: #00b66a;
-  
   }
-  
 }
 
-@media (max-width: 768px) {
-  /* Add mobile-specific overrides here if needed */
+
+
+.myheader-pricing-tab {
+  background-color: #000000; /* or any color you want */
+  padding: 8px 16px;
+  border-radius: 32px;
+  color: #ffffff!important;
+  font-weight: 600;
+}
+
+
+.myheader-pricing-tab:hover {
+  background-color: #000000; /* or any color you want */
+  padding: 8px 16px;
+  border-radius: 32px;
+  color: #FF9D00!important;
+  font-weight: 500;
 }

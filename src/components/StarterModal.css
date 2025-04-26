@@ -1,0 +1,94 @@
+/* StarterModal.css */
+
+/* Button hover effects */
+.starter-modal-open-btn {
+  padding: 10px 20px;
+  border: 1px solid black;
+  background-color: white;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.starter-modal-open-btn:hover {
+  background-color: #f7f7f7;
+}
+
+/* When the modal is open, disable hover effects */
+body.modal-open * {
+  pointer-events: none; /* Disable pointer events for all elements */
+}
+
+body.modal-open .starter-modal-overlay,
+body.modal-open .starter-modal-content {
+  pointer-events: auto; /* Allow interaction with modal content */
+}
+
+/* Modal overlay */
+.starter-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* Modal content */
+.starter-modal-content {
+  background: white;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  padding: 30px;
+  border-radius: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  pointer-events: all;
+}
+
+.starter-modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Other modal content styles */
+.starter-modal-content h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.starter-modal-content p {
+  margin-bottom: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.starter-modal-content ul {
+  padding-left: 20px;
+}
+
+.starter-modal-content li {
+  margin-bottom: 12px;
+  color: #444;
+  line-height: 1.5;
+}

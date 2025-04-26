@@ -1,0 +1,244 @@
+.howitworks-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(233, 233, 233);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.howitworks-card {
+    background: #ffffff;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 32px;
+    border: 1px solid #f4f4f4;
+    padding: 0; /* remove padding, we'll manage padding inside sections */
+    overflow-y: auto;
+    overflow-x: hidden; /* 👈 ADD THIS */
+    position: relative;
+    min-height: 500px; /* Ensure minimum height */
+    display: flex;
+    flex-direction: column; /* Ensure flex layout for uniformity */
+}
+
+.howitworks-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 32px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-button img {
+    width: 32px;
+    height: 32px;
+}
+.styled-icon {
+    width: 70px; /* Adjust the size as needed */
+    height: auto; /* Ensure aspect ratio is maintained */
+    margin-right: 1px; /* Space between the icon and text */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for effects */
+    background: #d9d9d9;
+    padding: 12px;
+    border-radius: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Align icon, header, and subheader horizontally */
+.step-heading {
+    display: flex;
+    align-items: center; /* Vertically center icon and text */
+    gap: 16px; /* Consistent space between the icon and text */
+    justify-content: flex-start; /* Align them to the start (left) */
+}
+
+/* Ensure the title and subtitle align with the icon */
+.step-titles {
+    display: flex;
+    flex-direction: column; /* Stack the title and subtitle vertically */
+    justify-content: center; /* Vertically center text */
+}
+
+/* Ensure header and subheader are aligned horizontally */
+.step-card h3, .step-card h4 {
+    margin: 0; /* Remove any default margin */
+}
+
+.step-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 0.5rem; /* Space between the title and subtitle */
+    margin-top: 1.5rem;
+}
+
+.step-card h4 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #4d4d4d;
+}
+
+/* Stepper */
+.stepper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px; /* better spacing between circles */
+    margin-top: 24px;
+}
+
+.step-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.step-circle {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #383838;
+    border-radius: 50%;
+    background-color: white;
+    color: #000;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.step-circle.active {
+    background-color: #000;
+    color: #fff;
+}
+
+.step-line {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 40px;
+    height: 2px;
+    background-color: #000;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+/* Step card content */
+.step-content {
+    display: flex;
+    justify-content: left;
+}
+
+.step-card {
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 16px;
+    border: 1px solid #f4f4f4;
+    text-align: left;
+    width: 100%;
+    max-width: 600px;
+    margin: 32px;
+    flex-grow: 1; /* This ensures consistent height for all content */
+}
+
+.step-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.step-card h4 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #4d4d4d;
+    margin-bottom: 1.5rem;
+}
+
+.step-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Step navigation buttons */
+.step-buttons {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 16px; /* 16px gap between buttons */
+    margin-top: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: 32px;
+    margin-bottom: 32px;
+}
+
+.prev-btn,
+.next-btn {
+    background: none; /* add this */
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.prev-btn:disabled {
+    cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .howitworks-card {
+        width: 95%;
+        height: 90%;
+    }
+
+    .howitworks-topbar {
+        padding: 16px;
+    }
+
+    .modal-title {
+        font-size: 18px;
+    }
+
+    .stepper {
+        gap: 24px;
+    }
+
+    .step-card {
+        padding: 24px;
+    }
+
+    .step-buttons {
+        flex-direction: row;
+        gap: 1rem;
+    }
+}
