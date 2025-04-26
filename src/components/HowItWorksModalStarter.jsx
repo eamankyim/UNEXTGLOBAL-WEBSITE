@@ -68,6 +68,10 @@ const HowItWorksModalStarter = () => {
     }
   };
 
+  const handleStepClick = (index) => {
+    setCurrentStep(index);  // Jump to the clicked step
+  };
+
   const modalContent = (
     <div className="howitworks-overlay">
       <motion.div
@@ -86,10 +90,14 @@ const HowItWorksModalStarter = () => {
           </button>
         </div>
 
+        {/* Stepper with clickable numbers */}
         <div className="stepper">
           {steps.map((_, index) => (
             <div key={index} className="step-wrapper">
-              <div className={`step-circle ${index === currentStep ? 'active' : ''}`}>
+              <div
+                className={`step-circle ${index === currentStep ? 'active' : ''}`}
+                onClick={() => handleStepClick(index)} // Add the onClick handler
+              >
                 {index + 1}
               </div>
               {index !== steps.length - 1 && <div className="step-line"></div>}
@@ -108,13 +116,13 @@ const HowItWorksModalStarter = () => {
             className="step-content"
           >
             <div className="step-card">
-              
+               
               {/* Title and Icon */}
               <div className="step-heading">
-                <img 
-                  src={steps[currentStep].icon} 
-                  alt="Step Icon" 
-                  className={`step-icon ${steps[currentStep].iconClass || ''}`} // Apply iconClass dynamically
+                <img
+                  src={steps[currentStep].icon}
+                  alt="Step Icon"
+                  className={`step-icon ${steps[currentStep].iconClass || ''}`}
                 />
                 <div className="step-titles">
                   <h3>{steps[currentStep].title}</h3>
