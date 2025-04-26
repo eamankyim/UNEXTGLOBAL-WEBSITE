@@ -1,3 +1,47 @@
+import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import './HowItWorksModal.css';
+
+// Steps Data
+const steps = [
+  {
+    title: 'Discovery & Strategy',
+    subtitle: 'We believe in growing with you.',
+    description: 'Our journey starts by understanding your business DNA — your goals, audience, mission, and vision. This foundation ensures everything we create is intentional and strategic.',
+    icon: '/images/icons/starter-icon1.svg',
+    iconClass: 'styled-icon',  // Add a class for styling
+  },
+  {
+    title: 'Brand Foundation',
+    subtitle: 'Building your identity the right way.',
+    description: 'Brand Discovery Session. Logo Design + Brand Manual. Brand Strategy & Positioning Basics.',
+    icon: '/images/icons/starter-icon1.svg',
+    iconClass: 'styled-icon',  // Add a class for styling
+  },
+  {
+    title: 'Essential Launch Assets',
+    subtitle: 'Equip your business for a professional start.',
+    description: 'Social Media Starter Kit. Business Card + Letterhead + Flyers. Company Email Setup + Signature. Free Templates.',
+    icon: '/images/icons/starter-icon1.svg',
+    iconClass: 'styled-icon',  // Add a class for styling
+  },
+  {
+    title: 'Digital Setup',
+    subtitle: 'Prepare your brand for online visibility.',
+    description: 'Social Media Account Setup: Setting up your main profiles correctly and professionally.',
+    icon: '/images/icons/starter-icon1.svg',
+    iconClass: 'styled-icon',  // Add a class for styling
+  },
+  {
+    title: 'Ongoing Monthly Support',
+    subtitle: 'Continuous support to keep you growing.',
+    description: '5 Social Media Posts/Month. Branding Add-ons. Social Media Management (Light). Priority Email Support. Business Guidance.',
+    icon: '/images/icons/starter-icon1.svg',
+    iconClass: 'styled-icon',  // Add a class for styling
+  },
+];
+
 const HowItWorksModalStarter = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
@@ -24,10 +68,6 @@ const HowItWorksModalStarter = () => {
     }
   };
 
-  const handleStepClick = (index) => {
-    setCurrentStep(index);  // Jump to the clicked step
-  };
-
   const modalContent = (
     <div className="howitworks-overlay">
       <motion.div
@@ -46,14 +86,10 @@ const HowItWorksModalStarter = () => {
           </button>
         </div>
 
-        {/* Stepper with clickable numbers */}
         <div className="stepper">
           {steps.map((_, index) => (
             <div key={index} className="step-wrapper">
-              <div
-                className={`step-circle ${index === currentStep ? 'active' : ''}`}
-                onClick={() => handleStepClick(index)} // Add the onClick handler
-              >
+              <div className={`step-circle ${index === currentStep ? 'active' : ''}`}>
                 {index + 1}
               </div>
               {index !== steps.length - 1 && <div className="step-line"></div>}
@@ -72,11 +108,12 @@ const HowItWorksModalStarter = () => {
             className="step-content"
           >
             <div className="step-card">
+              
               {/* Title and Icon */}
               <div className="step-heading">
-                <img
-                  src={steps[currentStep].icon}
-                  alt="Step Icon"
+                <img 
+                  src={steps[currentStep].icon} 
+                  alt="Step Icon" 
                   className={`step-icon ${steps[currentStep].iconClass || ''}`} // Apply iconClass dynamically
                 />
                 <div className="step-titles">
