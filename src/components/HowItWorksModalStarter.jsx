@@ -10,35 +10,35 @@ const steps = [
     subtitle: 'We believe in growing with you.',
     description: 'Our journey starts by understanding your business DNA — your goals, audience, mission, and vision. This foundation ensures everything we create is intentional and strategic.',
     icon: '/images/icons/starter-icon1.svg',
-    iconClass: 'styled-icon',  // Add a class for styling
+    iconClass: 'styled-icon',
   },
   {
     title: 'Brand Foundation',
     subtitle: 'Building your identity the right way.',
     description: 'Brand Discovery Session. Logo Design + Brand Manual. Brand Strategy & Positioning Basics.',
     icon: '/images/icons/starter-icon1.svg',
-    iconClass: 'styled-icon',  // Add a class for styling
+    iconClass: 'styled-icon',
   },
   {
     title: 'Essential Launch Assets',
     subtitle: 'Equip your business for a professional start.',
     description: 'Social Media Starter Kit. Business Card + Letterhead + Flyers. Company Email Setup + Signature. Free Templates.',
     icon: '/images/icons/starter-icon1.svg',
-    iconClass: 'styled-icon',  // Add a class for styling
+    iconClass: 'styled-icon',
   },
   {
     title: 'Digital Setup',
     subtitle: 'Prepare your brand for online visibility.',
     description: 'Social Media Account Setup: Setting up your main profiles correctly and professionally.',
     icon: '/images/icons/starter-icon1.svg',
-    iconClass: 'styled-icon',  // Add a class for styling
+    iconClass: 'styled-icon',
   },
   {
     title: 'Ongoing Monthly Support',
     subtitle: 'Continuous support to keep you growing.',
-    description: '5 Social Media Posts/Month. Branding Add-ons. Social Media Management (Light). Priority Email Support. Business Guidance.',
+    description: '5 Social Media Posts/Month. Branding Add-ons.  Social Media Management (Light). Priority Email Support. Business Guidance.  Social Media Management (Light). Priority Email Support. Business Guidance. Social Media Management (Light). Priority Email Support. Business Guidance. Social Media Management (Light). Social Media Management (Light). Priority Email Support. Business Guidance. Social Media Management (Light). Priority Email Support. Business Guidance. Social Media Management (Light). Priority Email Support. Business Guidance. Social Media Management (Light). Priority Email Support. Business Guidance. Social Media Management (Light). Priority Email Support. Business Guidance. Social Media Management (Light). Priority Email Support. Business Guidance. Social Media Management (Light). Priority Email Support. Business Guidance. Social Media Management (Light). Priority Email Support. Business Guidance. Social Media Management (Light). Priority Email Support. Business Guidance. Priority Email Support. Business Guidance.Social Media Management (Light). Priority Email Support. Business Guidance.Social Media Management (Light). Priority Email Support. Business Guidance.',
     icon: '/images/icons/starter-icon1.svg',
-    iconClass: 'styled-icon',  // Add a class for styling
+    iconClass: 'styled-icon',
   },
 ];
 
@@ -69,7 +69,7 @@ const HowItWorksModalStarter = () => {
   };
 
   const handleStepClick = (index) => {
-    setCurrentStep(index);  // Jump to the clicked step
+    setCurrentStep(index);
   };
 
   const modalContent = (
@@ -96,7 +96,7 @@ const HowItWorksModalStarter = () => {
             <div key={index} className="step-wrapper">
               <div
                 className={`step-circle ${index === currentStep ? 'active' : ''}`}
-                onClick={() => handleStepClick(index)} // Add the onClick handler
+                onClick={() => handleStepClick(index)}
               >
                 {index + 1}
               </div>
@@ -116,7 +116,6 @@ const HowItWorksModalStarter = () => {
             className="step-content"
           >
             <div className="step-card">
-               
               {/* Title and Icon */}
               <div className="step-heading">
                 <img
@@ -132,19 +131,22 @@ const HowItWorksModalStarter = () => {
 
               {/* Description */}
               <p>{steps[currentStep].description}</p>
-
             </div>
           </motion.div>
         </AnimatePresence>
 
         {/* Buttons */}
         <div className="step-buttons">
-          <button className="prev-btn" onClick={handlePrev} disabled={currentStep === 0}>
-            <img src="/images/icons/left-circle.svg" alt="Previous" />
-          </button>
-          <button className="next-btn" onClick={handleNext}>
-            <img src="/images/icons/right-circle.svg" alt="Next" />
-          </button>
+          {currentStep !== 0 && (
+            <button className="prev-btn" onClick={handlePrev}>
+              <img src="/images/icons/left-circle.svg" alt="Previous" />
+            </button>
+          )}
+          {currentStep !== steps.length - 1 && (
+            <button className="next-btn" onClick={handleNext}>
+              <img src="/images/icons/right-circle.svg" alt="Next" />
+            </button>
+          )}
         </div>
 
       </motion.div>

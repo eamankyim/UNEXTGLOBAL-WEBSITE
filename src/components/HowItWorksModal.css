@@ -15,7 +15,7 @@
 .howitworks-card {
     background: #ffffff;
     width: 90%;
-    max-width: 600px;
+    max-width: 900px;
     border-radius: 32px;
     border: 1px solid #f4f4f4;
     padding: 0; /* remove padding, we'll manage padding inside sections */
@@ -130,8 +130,14 @@
     justify-content: center;
     position: relative;
     z-index: 2;
+    cursor: pointer; /* 👈 Add pointer on hover */
+    transition: transform 0.2s ease, background-color 0.2s ease; /* 👈 Smooth hover animation */
 }
 
+.step-circle:hover {
+    transform: scale(1.1); /* 👈 Slight zoom effect */
+    background-color: #ffffff; /* 👈 Optional: soft background change on hover */
+}
 .step-circle.active {
     background-color: #000;
     color: #fff;
@@ -148,20 +154,29 @@
     z-index: 1;
 }
 
-/* Step card content */
 .step-content {
     display: flex;
     justify-content: left;
+    height: 400px; /* fixed height for card */
+    align-items: flex-start;
+    overflow-y: auto; /* allow vertical scroll */
+    scrollbar-width: none; /* 👈 Firefox hide scrollbar */
+    -ms-overflow-style: none; /* 👈 IE 10+ hide scrollbar */
+}
+
+.step-content::-webkit-scrollbar {
+    display: none; /* 👈 Chrome, Safari, Edge hide scrollbar */
 }
 
 .step-card {
     background: #ffffff;
     padding: 32px;
     border-radius: 16px;
-    border: 1px solid #f4f4f4;
+   
+    height: fit-content;
     text-align: left;
     width: 100%;
-    max-width: 600px;
+    max-width: 900px;
     margin: 32px;
     flex-grow: 1; /* This ensures consistent height for all content */
 }
@@ -195,7 +210,6 @@
     margin-right: 32px;
     margin-bottom: 32px;
 }
-
 .prev-btn,
 .next-btn {
     background: none; /* add this */
@@ -207,13 +221,19 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease; /* 👈 Smooth hover animation */
 }
+
+.prev-btn:hover,
+.next-btn:hover {
+    transform: scale(1.1); /* 👈 Slight zoom effect */
+    background-color: #ffffff; /* 👈 Optional: soft background change on hover */
+}
+
 
 .prev-btn:disabled {
     cursor: not-allowed;
 }
-
 /* Responsive */
 @media (max-width: 768px) {
     .howitworks-card {
@@ -230,15 +250,83 @@
     }
 
     .stepper {
-        gap: 24px;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .step-wrapper {
+        flex-direction: column;
+    }
+
+    .step-circle {
+        width: 24px;
+        height: 24px;
+        font-weight: normal;
+        font-size: 12px;
+    }
+
+    .step-line {
+        height: 1px;
+    }
+
+    .step-content {
+        height: 450px; /* Set fixed height for content */
+        display: flex;
+        justify-content: left;
+        -ms-overflow-style: none; /* Hide scrollbar on IE 10+ */
     }
 
     .step-card {
-        padding: 24px;
+        padding: 16px;
+        margin: 16px;
+        height: 420px; /* Ensure it matches the content height */
+        border-radius: 16px;
+        overflow-y: auto; /* Allow scrolling within the card */
+        text-align: center; /* Center text inside the card */
+        overflow-x: auto; /* allow vertical scroll */
+        scrollbar-width: none; /* 👈 Firefox hide scrollbar */
+        -ms-overflow-style: none; /* 👈 IE 10+ hide scrollbar */
+    }
+
+    /* Move styled-icon above header and subheader */
+    .step-heading {
+        flex-direction: column; /* Stack icon on top of text */
+        align-items: center; /* Center align text and icon */
+        text-align: center; /* Ensure all text is centered */
+    }
+
+    .styled-icon {
+        width: 48px; /* Adjust the size as needed */  
+        padding: 8px;
+        margin-bottom: 0px; /* Add space between icon and text */
+    }
+
+    .step-card h3 {
+        font-size: 18px;
+        margin-bottom: 0.1rem;
+    }
+
+    .step-card h4 {
+        font-size: 14px;
+        font-weight: 600;
     }
 
     .step-buttons {
+        position: absolute;
+        bottom: 20px; /* Centered at the bottom */
+        left: 50%;
+        transform: translateX(-50%);
         flex-direction: row;
-        gap: 1rem;
+        justify-content: center;
+        gap: 12px;
+        margin: 0 auto;
+        max-width: 600px;
+    }
+
+    .prev-btn,
+    .next-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 16px;
     }
 }
