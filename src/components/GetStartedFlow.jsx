@@ -6,6 +6,10 @@ import { ToastContainer, toast } from 'react-toastify'; // Import Toastify
 import 'react-toastify/dist/ReactToastify.css';
 import "./GetStartedFlow.css"; // Assuming you have your styles here
 
+
+
+
+
 const GetStartedFlow = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -21,7 +25,7 @@ const GetStartedFlow = () => {
   });
 
   const [isOpen, setIsOpen] = useState(false);
-  const [isCalendlyModalOpen, setIsCalendlyModalOpen] = useState(false); // Add state for Calendly modal
+  const [isCalendarModalOpen, setIsCalendarModalOpen] = useState(false); // State for custom calendar modal
 
   // Save form data to localStorage to persist if closed
   useEffect(() => {
@@ -102,7 +106,7 @@ const GetStartedFlow = () => {
       toast.error('Please select at least one service!');
       return false;
     }
-    if (currentStep === 7 && !formData.reachDate) {
+    if (currentStep === 7 && !formData.reachTime) {
       toast.error('Please select a date!');
       return false;
     }
@@ -140,6 +144,19 @@ const GetStartedFlow = () => {
       });
   };
 
+  const handleBookingTime = (date, time) => {
+    setFormData((prev) => ({
+      ...prev,
+      reachDate: date,
+      reachTime: time,
+    }));
+    setIsCalendarModalOpen(false);
+    setCurrentStep(7); // Move back to the 7th step
+  };
+
+
+
+  
   return (
     <>
       {/* Get Started Button */}
@@ -249,12 +266,22 @@ const GetStartedFlow = () => {
                     </>
                   )}
 
+
 {currentStep === 7 && (
   <>
     <h3>Best time to reach you?</h3>
-    <button onClick={() => setIsBookingModalOpen(true)} className="book-time-button">
-      Book a Time
-    </button>
+    <input
+      type="time"
+      value={formData.reachTime || ''}
+      onChange={(e) => {
+        setFormData((prevData) => ({
+          ...prevData,
+          reachTime: e.target.value,
+        }));
+      }}
+      className="time-input"
+      placeholder="12:00 PM"
+    />
   </>
 )}
 
@@ -302,26 +329,24 @@ const GetStartedFlow = () => {
         document.body
       )}
 
-      {/* Calendly Modal */}
+      {/* Custom Calendar Modal */}
       {createPortal(
         <AnimatePresence>
-          {isCalendlyModalOpen && (
-            <div className="calendly-overlay">
-              <div className="calendly-card">
+          {isCalendarModalOpen && (
+            <div className="calendar-overlay">
+              <div className="calendar-card">
                 <div className="stepper-container">
-                  <button className="close-button" onClick={() => setIsCalendlyModalOpen(false)}>X</button>
+                  <button className="close-button" onClick={() => setIsCalendarModalOpen(false)}>X</button>
                 </div>
 
-                <h3>Book a Time</h3>
-                <div className="calendly-container">
-                    <iframe
-                    src="https://calendly.com/unextglobalsolutions?background_color=ffffff&hide_event_type_details=true&text_color=333333"
-                    width="100%"
-                    height="600"
-                    frameBorder="0"
-                    scrolling="no"
-                    title="Calendly Booking"
-                    ></iframe>
+                <h3>Pick a Date and Time</h3>
+                {/* Custom Calendar */}
+                <div className="calendar-container">
+                  {/* Custom Calendar component goes here */}
+                  {/* Replace the button below with your actual calendar interface */}
+                  <button onClick={() => handleBookingTime('2025-05-01', '10:00 AM')}>
+                    Select May 1, 2025 at 10:00 AM
+                  </button>
                 </div>
               </div>
             </div>

@@ -9,7 +9,7 @@ import GetStartedStarter from './GetStartedStarter';
 import './PricingSection.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
-import GetStartedFlow from './GetStartedFlow';
+import GetStartedFlow2 from './GetStartedFlow2';
 
 const PricingSection = () => {
   return (
@@ -80,7 +80,7 @@ const PricingSection = () => {
             </div>
             <div className="pricing-buttons">
             <HowItWorksModalGrowth />
-            <GetStartedFlow />
+            <GetStartedFlow2 />
             </div>
           </div>
 
