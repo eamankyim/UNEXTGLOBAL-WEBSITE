@@ -10,252 +10,191 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
-}
-
-.getstarted-card {
+  }
+  
+  .getstarted-card {
     background: #ffffff;
     width: 90%;
     max-width: 900px;
     border-radius: 32px;
     border: 1px solid #f4f4f4;
     padding: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
     position: relative;
-    min-height: 600px;
+    min-height: 500px;
     display: flex;
     flex-direction: column;
-}
-
-.getstarted-topbar {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+  .getstarted-topbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 24px 32px;
     border-bottom: 1px solid #eee;
-}
-
-.modal-title {
+  }
+  
+  .modal-title {
     font-size: 20px;
     font-weight: bold;
     color: #333;
     margin: 0;
-}
-
-/* Step 1 Styles */
-.step-1 {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    padding: 32px;
-}
-
-.plan-details {
-    flex: 1;
-    background: #f9f9f9;
-    padding: 24px;
-    border-radius: 16px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.plan-details h2 {
-    font-size: 22px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 16px;
-}
-
-.plan-details ul {
-    list-style: none;
-    padding-left: 20px;
-}
-
-.plan-details li {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 8px;
-}
-
-.form-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-.form-container h2 {
-    font-size: 22px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 16px;
-}
-
-.form-field {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.form-field label {
-    font-size: 16px;
-    color: #555;
-}
-
-input, select, textarea {
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    color: #333;
-}
-
-button {
-    background-color: #00bfae;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 5px;
+  }
+  
+  .close-btn {
+    background: none;
     border: none;
     cursor: pointer;
-    margin-top: 24px;
-}
-
-button:hover {
-    background-color: #007d71;
-}
-
-/* Step 2 Styles */
-.step-2 {
+    padding: 8px;
     display: flex;
-    flex-direction: column;
-    gap: 32px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .close-btn img {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .step1, .step2, .step3 {
     padding: 32px;
-}
-
-.calendar-container {
-    max-width: 100%;
-    background: #f9f9f9;
-    padding: 24px;
-    border-radius: 16px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.step-2 h2 {
-    font-size: 22px;
-    font-weight: bold;
-    color: #333;
-}
-
-button {
-    background-color: #00bfae;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    margin-top: 24px;
-}
-
-button:hover {
-    background-color: #007d71;
-}
-
-/* Step 3 Styles */
-.step-3 {
-    text-align: center;
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-.step-3 h2 {
+    text-align: left;
+  }
+  
+  .step1 .plan-details,
+  .step2 .consultation-method,
+  .step3 .confirmation-info {
+    margin-bottom: 20px;
+  }
+  
+  .step1 h3, .step2 h3, .step3 h3 {
     font-size: 24px;
     font-weight: bold;
-    color: #333;
-}
-
-.step-3 p {
-    font-size: 16px;
-    color: #555;
-}
-
-button {
-    background-color: #00bfae;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    margin-top: 16px;
-}
-
-button:hover {
-    background-color: #007d71;
-}
-
-/* Stepper Styles */
-.stepper {
+  }
+  
+  .step1 .business-info-form input,
+  .step1 .business-info-form select,
+  .step1 .business-info-form textarea,
+  .step2 .consultation-method select,
+  .step2 textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .stepper {
     display: flex;
     justify-content: center;
     gap: 40px;
     margin-top: 24px;
-}
-
-.stepper button {
-    padding: 12px 24px;
-    border-radius: 8px;
-    border: 1px solid #f4f4f4;
-    background-color: #fff;
-    color: #333;
+  }
+  
+  .step-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-top: 2rem;
+  }
+  
+  .prev-btn, .next-btn {
+    background: none;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.stepper button:hover {
-    background-color: #f0f0f0;
-}
-
-/* Button Active/Disabled States */
-.stepper button.disabled {
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+  
+  .prev-btn:hover, .next-btn:hover {
+    transform: scale(1.1);
+    background-color: #ffffff;
+  }
+  
+  .prev-btn:disabled, .next-btn:disabled {
     cursor: not-allowed;
-    background-color: #e0e0e0;
-}
-
-.stepper button.active {
-    background-color: #00bfae;
-    color: white;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
+  }
+  
+  .stepper button {
+    background-color: #2c3e50;
+    color: #fff;
+    border-radius: 25px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .stepper button:hover {
+    background-color: #34495e;
+  }
+  
+  .step3 h3 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .step3 p {
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .step3 .thank-you-buttons button {
+    margin-right: 12px;
+  }
+  
+  @media (max-width: 768px) {
     .getstarted-card {
-        width: 100%;
-        max-width: 100%;
-        border-radius: 16px;
+      width: 95%;
+      height: 90%;
     }
-
+  
     .getstarted-topbar {
-        flex-direction: column;
-        align-items: flex-start;
+      padding: 16px;
     }
-
-    .step-1, .step-2 {
-        flex-direction: column;
-        padding: 20px;
+  
+    .modal-title {
+      font-size: 18px;
     }
-
-    .plan-details, .form-container {
-        flex: 1;
-        padding: 16px;
+  
+    .stepper {
+      flex-wrap: wrap;
+      gap: 20px;
     }
-
-    .payment-options {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 20px;
+  
+    .step-buttons {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      flex-direction: row;
+      justify-content: center;
+      gap: 12px;
     }
-
-    .payment-options button {
-        width: 100%;
+  
+    .prev-btn, .next-btn {
+      width: 48px;
+      height: 48px;
+      font-size: 16px;
     }
-}
+  
+    .step1 .business-info-form input,
+    .step1 .business-info-form select,
+    .step1 .business-info-form textarea,
+    .step2 .consultation-method select,
+    .step2 textarea {
+      padding: 10px;
+    }
+  
+    .step3 .thank-you-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+  }
+  

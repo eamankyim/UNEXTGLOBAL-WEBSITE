@@ -3,10 +3,13 @@ import HowItWorksModalStarter from './HowItWorksModalStarter';
 import HowItWorksModalGrowth from './HowItWorksModalGrowth';
 import HowItWorksModalScale from './HowItWorksModalScale';
 
+import GetStartedStarter from './GetStartedStarter';
+
 
 import './PricingSection.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import GetStartedFlow from './GetStartedFlow';
 
 const PricingSection = () => {
   return (
@@ -44,7 +47,8 @@ const PricingSection = () => {
             </div>
             <div className="pricing-buttons">
             <HowItWorksModalStarter />
-              <button className="btn-primary">Get started</button>
+            <GetStartedStarter />
+           
             </div>
           </div>
 
@@ -76,7 +80,7 @@ const PricingSection = () => {
             </div>
             <div className="pricing-buttons">
             <HowItWorksModalGrowth />
-              <button className="btn-primary">Get started</button>
+            <GetStartedFlow />
             </div>
           </div>
 

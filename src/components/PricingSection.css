@@ -1,10 +1,10 @@
+/* Pricing Section Wrapper */
 .pricing-wrapper {
     width: 100%;
     padding: 250px 1rem 2rem;
     margin: 0 auto;
     margin-top: -170px;
-    background: 
-    linear-gradient(to bottom, rgba(207, 229, 255, 0.8) 0%, rgba(255, 252, 254, 0.8) 80%, transparent 100%);
+    background: linear-gradient(to bottom, rgba(207, 229, 255, 0.8) 0%, rgba(255, 252, 254, 0.8) 80%, transparent 100%);
     min-height: 400px;
     background-size: 100% 900px, 30px 30px;
     background-repeat: no-repeat, repeat;
@@ -14,12 +14,14 @@
     text-align: center;
 }
 
+/* Pricing Section Container */
 .pricing-section {
     max-width: 1440px;
     margin: 0 auto; /* Center the section horizontally */
     font-family: 'Inter', sans-serif;
 }
 
+/* Pricing Header */
 .pricing-header {
     text-align: center;
     margin-bottom: 1rem; /* Reduced margin to push elements upwards */
@@ -44,6 +46,7 @@
     margin: 1rem;
 }
 
+/* Pricing Cards Container */
 .pricing-cards {
     margin-top: 5rem;
     display: flex;
@@ -54,6 +57,7 @@
     justify-content: center; /* Center cards on large screens */
 }
 
+/* Individual Pricing Card */
 .pricing-card {
     background: #fff;
     border-radius: 16px;
@@ -71,10 +75,10 @@
 }
 
 .pricing-card:hover {
-  
     transform: scale(1.01); /* slightly enlarge on hover */
 }
 
+/* Featured Pricing Card */
 .featured {
     background: #000;
     color: #fff;
@@ -96,6 +100,7 @@
     right: 0px;
 }
 
+/* Pricing Card Heading */
 .pricing-card h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
@@ -111,12 +116,14 @@
     color: #ccc;
 }
 
+/* Pricing Price */
 .pricing-price {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 2rem;
 }
 
+/* Features List in Pricing Cards */
 .pricing-features {
     display: flex;
     flex-direction: column;
@@ -139,6 +146,8 @@
 .featured .feature-icon {
     color: #ffffff;
 }
+
+/* Pricing Buttons */
 .pricing-buttons {
     margin-top: 2rem; /* Pushes the buttons to the bottom */
     display: flex;
@@ -154,13 +163,14 @@
     transform: scale(1.05); /* Scales up the button on hover */
 }
 
+/* Button Styles */
 .btn-outline {
     background: transparent;
     border: 1px solid #000;
     color: #000;
     font-size: 16px;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
+    padding: 1rem 2rem;
+    border-radius: 4px;
     font-weight: 600;
     cursor: pointer;
     flex: 1;
@@ -180,9 +190,9 @@
     background: #000000;
     border: none;
     color: #fff;
-    padding: 0.75rem 1.5rem;
+    padding: 1rem 2rem;
     font-size: 16px;
-    border-radius: 8px;
+    border-radius: 4px;
     font-weight: 550;
     cursor: pointer;
     flex: 1;
@@ -220,8 +230,6 @@
         background: #000;
         color: #fff;
     }
-
-
 
     .pricing-price {
         font-size: 1.8rem; /* Adjust price size */

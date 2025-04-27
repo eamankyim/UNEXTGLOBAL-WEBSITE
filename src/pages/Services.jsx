@@ -11,7 +11,7 @@ import FloatingImpactSection from "../components/FloatingImpactSection";
 import ServicesSection from "../components/ServicesSection";
 import TeamHighlightSection from "../components/TeamHighlightSection";
 import WiggleCardSection from "../components/WiggleCardSection";
-import PricingPage from "../components/PricingPage";
+
 
 
 const Services = () => {

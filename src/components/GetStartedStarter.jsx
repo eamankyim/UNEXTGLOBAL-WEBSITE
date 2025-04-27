@@ -1,144 +1,179 @@
 import React, { useState } from 'react';
-import Calendar from 'react-calendar'; // Assume you're using a calendar component like this
-import { Button, Input, Textarea, Select, Option, RadioGroup, Radio, Label } from 'your-ui-library'; // Adjust according to your UI library
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css'; // For basic calendar styles
+import './GetStarted.css';
+import { createPortal } from 'react-dom'; // For rendering modal outside the parent component
+import { AnimatePresence } from 'framer-motion'; // For animations
 
-const GetStartedFlow = () => {
-  const [step, setStep] = useState(1);
-  const [formData, setFormData] = useState({
-    businessName: '',
-    businessSize: '',
+const GetStartedStarter = () => {
+  const [isOpen, setIsOpen] = useState(false); // State to manage modal visibility
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [businessInfo, setBusinessInfo] = useState({
+    name: '',
+    size: '',
     industry: '',
-    businessGoals: '',
-    consultationTime: '',
-    consultationMethod: 'Zoom',
-    specialNotes: '',
+    goals: '',
   });
+  const [currentStep, setCurrentStep] = useState(1); // Track the current step
 
-  const handleChange = (e) => {
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
+    setBusinessInfo({
+      ...businessInfo,
+      [name]: value,
+    });
   };
 
-  const handleCalendarChange = (date) => {
-    setFormData((prevData) => ({ ...prevData, consultationTime: date }));
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log('Business Info:', businessInfo);
+    console.log('Appointment Date:', selectedDate);
   };
 
-  const handleSubmit = () => {
-    setStep(3);
+  const closeModal = () => {
+    setIsOpen(false); // Close the modal
+    setCurrentStep(1); // Reset steps when closing modal
+  };
+
+  const nextStep = () => {
+    if (currentStep < 3) {
+      setCurrentStep(currentStep + 1);
+    }
+  };
+
+  const previousStep = () => {
+    if (currentStep > 1) {
+      setCurrentStep(currentStep - 1);
+    }
   };
 
   return (
-    <div>
-      {step === 1 && (
-        <div className="step-1">
-          <div className="plan-details">
-            <h2>You’ve Selected the Growth Plan</h2>
-            <ul>
-              <li>Service 1</li>
-              <li>Service 2</li>
-              <li>Service 3</li>
-              <li>Price: $500/month</li>
-            </ul>
-          </div>
-          <div className="form-container">
-            <h2>Business Information</h2>
-            <form>
-              <div className="form-field">
-                <Label for="businessName">Business Name</Label>
-                <Input
-                  type="text"
-                  id="businessName"
-                  name="businessName"
-                  value={formData.businessName}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="form-field">
-                <Label>Business Size</Label>
-                <RadioGroup
-                  name="businessSize"
-                  value={formData.businessSize}
-                  onChange={handleChange}
-                >
-                  <Radio value="Small" label="Small" />
-                  <Radio value="Medium" label="Medium" />
-                  <Radio value="Large" label="Large" />
-                </RadioGroup>
-              </div>
-              <div className="form-field">
-                <Label for="industry">Industry</Label>
-                <Select
-                  id="industry"
-                  name="industry"
-                  value={formData.industry}
-                  onChange={handleChange}
-                >
-                  <Option value="Tech">Tech</Option>
-                  <Option value="Healthcare">Healthcare</Option>
-                  <Option value="Retail">Retail</Option>
-                  <Option value="Other">Other</Option>
-                </Select>
-              </div>
-              <div className="form-field">
-                <Label for="businessGoals">Business Goals</Label>
-                <Textarea
-                  id="businessGoals"
-                  name="businessGoals"
-                  value={formData.businessGoals}
-                  onChange={handleChange}
-                />
-              </div>
-            </form>
-            <Button onClick={() => setStep(2)}>Next: Book Your Consultation</Button>
-          </div>
-        </div>
-      )}
+    <>
+      {/* Get Started Button */}
+      <button className="btn-primary" onClick={() => setIsOpen(true)}>
+        Get Started
+      </button>
 
-      {step === 2 && (
-        <div className="step-2">
-          <h2>Book Your Consultation</h2>
-          <div className="calendar-container">
-            <Calendar onChange={handleCalendarChange} value={formData.consultationTime} />
-          </div>
-          <div className="form-container">
-            <Label for="consultationMethod">Consultation Method</Label>
-            <Select
-              id="consultationMethod"
-              name="consultationMethod"
-              value={formData.consultationMethod}
-              onChange={handleChange}
-            >
-              <Option value="Zoom">Zoom</Option>
-              <Option value="Phone">Phone</Option>
-              <Option value="In-Person">In-Person</Option>
-            </Select>
-            <div className="form-field">
-              <Label for="specialNotes">Any Special Notes?</Label>
-              <Textarea
-                id="specialNotes"
-                name="specialNotes"
-                value={formData.specialNotes}
-                onChange={handleChange}
-              />
+      {/* Modal with portal */}
+      {createPortal(
+        <AnimatePresence>
+          {isOpen && (
+            <div className="getstarted-overlay">
+              <div className="getstarted-card">
+                <div className="getstarted-topbar">
+                  <h2 className="modal-title">Get started - Starter plan</h2>
+                  <button className="close-btn" onClick={closeModal}>
+  <img src="images/icons/cancel-circle.svg" alt="Close" />
+</button>
+                </div>
+
+                {/* Step 1: Plan Confirmation & Information Collection */}
+                {currentStep === 1 && (
+                  <div className="step1">
+
+                    <div className="business-info-form">
+                      <h3>Business Information</h3>
+                      <form onSubmit={handleSubmit}>
+                        <label htmlFor="name">Business Name</label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          value={businessInfo.name}
+                          onChange={handleInputChange}
+                          required
+                        />
+
+                        <label>Business Size</label>
+                        <select
+                          name="size"
+                          value={businessInfo.size}
+                          onChange={handleInputChange}
+                          required
+                        >
+                          <option value="">Select size</option>
+                          <option value="Small">Small</option>
+                          <option value="Medium">Medium</option>
+                          <option value="Large">Large</option>
+                        </select>
+
+                        <label htmlFor="industry">Industry</label>
+                        <input
+                          type="text"
+                          id="industry"
+                          name="industry"
+                          value={businessInfo.industry}
+                          onChange={handleInputChange}
+                          required
+                        />
+
+                        <label htmlFor="goals">Business Goals</label>
+                        <textarea
+                          id="goals"
+                          name="goals"
+                          value={businessInfo.goals}
+                          onChange={handleInputChange}
+                          required
+                        />
+
+                        <button type="submit">Submit</button>
+                      </form>
+                    </div>
+                  </div>
+                )}
+
+                {/* Step 2: Appointment Scheduling */}
+                {currentStep === 2 && (
+                  <div className="step2">
+                    <h3>Book Your Consultation</h3>
+                    <Calendar
+                      onChange={setSelectedDate}
+                      value={selectedDate}
+                      minDate={new Date()}
+                    />
+                    <div className="consultation-method">
+                      <label>Consultation Method</label>
+                      <select>
+                        <option value="zoom">Zoom</option>
+                        <option value="phone">Phone</option>
+                        <option value="in-person">In-Person</option>
+                      </select>
+                    </div>
+                    <label>Any Special Notes</label>
+                    <textarea placeholder="Add any special notes"></textarea>
+                  </div>
+                )}
+
+                {/* Step 3: Confirmation & Thank You */}
+                {currentStep === 3 && (
+                  <div className="step3">
+                    <h3>Thank You!</h3>
+                    <p>Your Growth Plan has been confirmed.</p>
+                    <p>Appointment: {selectedDate ? selectedDate.toDateString() : 'Not selected yet'}</p>
+                    <p>Consultation Method: Zoom</p>
+                    <button onClick={() => console.log('Download Confirmation')}>
+                      Download Confirmation
+                    </button>
+                    <button onClick={() => console.log('Add to Calendar')}>
+                      Add to Calendar
+                    </button>
+                  </div>
+                )}
+
+                {/* Navigation */}
+                <div className="stepper">
+                  <button onClick={previousStep}>Back</button>
+                  <button onClick={nextStep}>Next</button>
+                </div>
+              </div>
             </div>
-            <Button onClick={handleSubmit}>Submit & Confirm</Button>
-          </div>
-        </div>
+          )}
+        </AnimatePresence>,
+        document.body
       )}
-
-      {step === 3 && (
-        <div className="step-3">
-          <h2>Thank You!</h2>
-          <p>You’ve selected the Growth Plan.</p>
-          <p>Your consultation is scheduled for {formData.consultationTime} via {formData.consultationMethod}.</p>
-          <Button onClick={() => alert('Downloading confirmation...')}>Download Confirmation</Button>
-          <Button onClick={() => alert('Adding to calendar...')}>Add to Calendar</Button>
-          <Button onClick={() => setStep(1)}>Go Back to Dashboard</Button>
-          <Button onClick={() => alert('Exploring more services...')}>Explore More Services</Button>
-        </div>
-      )}
-    </div>
+    </>
   );
 };
 
-export default GetStartedFlow;
+export default GetStartedStarter;
