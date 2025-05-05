@@ -8,15 +8,13 @@ const steps = [
     title: 'Step 1: Start With a Quick Hello',
     subtitle: 'Enter your name, email, and phone number.',
     description: `Once you submit your details, our team reaches out to book a discovery call that fits your schedule. It’s relaxed and personal — just the beginning of a strong working relationship.`,
-    icon: '/images/icons/starter-icon1.svg',
-    iconClass: 'styled-icon',
+   
   },
   {
     title: 'Step 2: Deep Dive Into Your Vision',
     subtitle: 'We connect for a discovery session — but we go deeper this time.',
     description: `Tell us what you’ve built so far, the challenges you face, and the growth you envision. We’ll uncover what’s holding you back and what’s possible with the right tools and guidance.`,
-    icon: '/images/icons/starter-icon1.svg',
-    iconClass: 'styled-icon',
+  
   },
   {
     title: 'Step 3: Strategy, Structure & Brand Foundation',
@@ -35,8 +33,7 @@ const steps = [
       ✦ <strong>Company Onboarding Docs</strong> – SOPs, welcome kits, team materials<br><br>
       This step aligns your brand with powerful systems and strategy, ready for scaling.
     `,
-    icon: '/images/icons/starter-icon1.svg',
-    iconClass: 'styled-icon',
+  
   },
   {
     title: 'Step 4: Setup, Branding & Digital Presence',
@@ -57,26 +54,24 @@ const steps = [
       ✦ <strong>Newsletter System Ready to Go</strong> – email list growth starts now<br><br>
       Your business now looks, feels, and operates like a pro brand — everywhere it matters.
     `,
-    icon: '/images/icons/starter-icon1.svg',
-    iconClass: 'styled-icon',
+   
   },
   {
     title: 'Step 5: Ongoing Growth Support (Included)',
     subtitle: 'We don’t disappear. We grow with you — every month.',
     description: `
-      ✅ <strong>8 Custom Social Media Posts/Month</strong> – designed and written for your audience<br>
-      ✅ <strong>1 Animated Story or Reel</strong> – professional, engaging video content<br>
-      ✅ <strong>1 Motion Ad</strong> – designed for campaigns or promotions<br>
-      ✅ <strong>Branding Add-ons</strong> – tweaks, seasonal changes, or feature extensions<br>
-      ✅ <strong>Newsletter Assistance</strong> – content creation + formatting help<br>
-      ✅ <strong>Monthly Strategy Check-Ins</strong> – to review progress and adjust tactics<br>
-      ✅ <strong>Basic Website Updates</strong> – minor content changes and upkeep<br>
-      ✅ <strong>Priority Email Support</strong> – fast answers when you need them<br><br>
+      ✦ <strong>8 Custom Social Media Posts/Month</strong> – designed and written for your audience<br>
+      ✦ <strong>1 Animated Story or Reel</strong> – professional, engaging video content<br>
+      ✦ <strong>1 Motion Ad</strong> – designed for campaigns or promotions<br>
+      ✦ <strong>Branding Add-ons</strong> – tweaks, seasonal changes, or feature extensions<br>
+      ✦ <strong>Newsletter Assistance</strong> – content creation + formatting help<br>
+      ✦ <strong>Monthly Strategy Check-Ins</strong> – to review progress and adjust tactics<br>
+      ✦ <strong>Basic Website Updates</strong> – minor content changes and upkeep<br>
+      ✦<strong>Priority Email Support</strong> – fast answers when you need them<br><br>
       💰 <strong>GHS 1,000/month – all inclusive</strong><br>
       You get the systems, the visuals, and the monthly push to keep moving forward.
     `,
-    icon: '/images/icons/starter-icon1.svg',
-    iconClass: 'styled-icon',
+   
   },
 ];
 
@@ -156,11 +151,7 @@ const HowItWorksModalGrowth = () => {
           >
             <div className="step-card">
               <div className="step-heading">
-                <img
-                  src={steps[currentStep].icon}
-                  alt="Step Icon"
-                  className={`step-icon ${steps[currentStep].iconClass || ''}`}
-                />
+              
                 <div className="step-titles">
                   <h3>{steps[currentStep].title}</h3>
                   <h4>{steps[currentStep].subtitle}</h4>

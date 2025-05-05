@@ -10,110 +10,110 @@ const faqData = {
     {
       question: "What is UNext?",
       answer:
-        "UNEXT is your growth partner — providing branding, strategy, consulting, tech solutions, CX training, and more under one subscription-based model.",
+        "UNEXT is your all-in-one business growth partner — offering branding, strategy, tech, training, and consulting through a simple subscription model.",
     },
     {
       question: "Who is UNext for?",
       answer:
-        "Small to medium businesses at any stage — from startups to scaling brands.",
+        "We’re built for SMEs at any stage — from fresh startups to growing brands ready to scale.",
     },
     {
       question: "Why the name UNext?",
       answer:
-        "Because we’re here to help <strong>YOU</strong> become the <strong>NEXT</strong> big thing — through smart strategies, bold branding, and powerful tools.",
+        "Because our mission is to help <strong>U</strong> become the <strong>NEXT</strong> big thing — with bold ideas, smart tools, and strategic execution.",
     },
     {
       question: "What makes you different?",
       answer:
-        "We combine multiple expert teams under one roof, partner with governing bodies and tech giants, and offer full-stack support — from S to S (Structure to Strategy).",
+        "We combine expert teams across multiple fields under one roof — providing end-to-end support, trusted partnerships, and scalable solutions that grow with you.",
     },
   ],
-  "Getting Started": [
+  "Getting started": [
     {
-      question: "How do I begin?",
+      question: "How do I get started?",
       answer:
-        "Book a discovery call or WhatsApp us. We’ll learn about your goals, then match you with the right plan and team.",
+        "Just book a discovery call or message us on WhatsApp. We’ll learn about your goals and recommend the right plan for your business.",
     },
     {
-      question: "Can you help me register my business?",
+      question: "Can you help register my business?",
       answer:
-        "Yes. We work closely with the Registrar General’s Department to get your business legally set up.",
+        "Absolutely. We work closely with the Registrar General’s Department to set up your business legally and correctly.",
     },
     {
       question: "Do I need a brand before joining?",
       answer:
-        "Nope. If you don’t have a brand guide, we’ll build one for you — including logo, colors, voice, and usage rules.",
+        "Not at all. If you don’t have a brand guide yet, we’ll create one for you — complete with logo, voice, colors, and usage rules.",
     },
     {
-      question: "What do you need from me to start?",
+      question: "What do you need from me to begin?",
       answer:
-        "Just your business vision, goals, and time for an onboarding session. We’ll guide you the rest of the way.",
+        "Just your business goals, vision, and a little time to meet. We’ll handle the rest from onboarding to execution.",
     },
   ],
-  "Plans & Pricing": [
+  "Plans & pricing": [
     {
       question: "What plans do you offer?",
       answer:
-        "<strong>Starter</strong> – GHS 400/mo<br><br><strong>Growth</strong> – GHS 700/mo<br><br><strong>Scale</strong> – GHS 1200/mo<br><br>Each plan starts with a setup phase (e.g., GHS 1400 for Starter Month 1).",
+        "<strong>Starter</strong> – GHS 3000 setup + GHS 295/mo<br><br><strong>Growth</strong> – GHS 990/mo<br><br><strong>Scale</strong> – GHS 1980/mo<br><br>We also create custom plans based on your unique needs.",
     },
     {
-      question: "What’s included in the plans?",
+      question: "What’s included in each plan?",
       answer:
-        "Branding, business setup, consulting, content, design, CX training, strategy, tools, and custom software/website builds (within scope).",
+        "All plans cover business setup, branding, content, design, CX training, consulting, strategy, tools, and software/website builds within scope.",
     },
     {
-      question: "Can I switch or cancel anytime?",
+      question: "Can I change or cancel my plan?",
       answer:
-        "Yes. You can upgrade, downgrade, or pause depending on your business needs.",
+        "Yes — you can cancel anytime for the Starter Plan. For the Growth and Scale Plans, there is a minimum commitment of 6 months, as these plans don't have setup fees. You can upgrade, downgrade, or pause your plan based on your business needs.",
     },
     {
-      question: "Do you offer custom solutions?",
+      question: "Do you offer custom packages?",
       answer:
-        "Yes — especially for businesses with unique requirements. Let's talk.",
+        "Yes. If your business has unique requirements, we’ll tailor a custom plan to fit your goals.",
     },
   ],
-  "Our Process": [
+  "Our process": [
     {
-      question: "What’s your typical workflow?",
+      question: "How does your process work?",
       answer:
-        "<ul><li>Discovery & business goals</li><li>Branding & legal setup</li><li>Tool setup (ClickUp, Google Workspace, etc.)</li><li>Strategy & business planning</li><li>Monthly support and execution</li></ul>",
+        "We start with a discovery meeting to understand your business, where you are, and where you want to go. From there, we create a roadmap for your success. If you haven't done so already, we handle the legal setup. We get your brand identity right, define your strategies, and set up the right tools — like ClickUp and Google Workspace — to streamline your operations. Then, we continue to provide monthly support, execution, and updates, including ongoing marketing and whatever else your business needs to thrive.",
     },
     {
       question: "How long does onboarding take?",
       answer:
-        "Usually 2–3 weeks. Once your brand guide and tools are set, we move into execution.",
+        "Onboarding typically takes 2–3 weeks. Once your brand guide and systems are ready, we shift into execution.",
     },
     {
-      question: "What if I already have branding or tools?",
+      question: "What if I already have branding or systems?",
       answer:
-        "We’ll review and work with what you have, or upgrade where needed.",
+        "No problem. We’ll assess what you have, keep what works, and upgrade the rest.",
     },
     {
-      question: "Do you help with compliance like FDA?",
+      question: "Do you help with things like FDA approval?",
       answer:
-        "Yes. For product-based businesses, we help you navigate FDA approval and other compliance needs through our partnerships.",
+        "Yes. We support product-based businesses with FDA registration, compliance, and certifications through our partner network.",
     },
   ],
-  "Team & Support": [
+  "Team & support": [
     {
       question: "How is your team structured?",
       answer:
-        "We operate as one company, powered by 8 specialized teams:<ul><li>Business Consulting & Compliance</li><li>Strategy & Positioning</li><li>Branding & Design</li><li>Tech & Software</li><li>Digital & Social Media</li><li>CX & UX Training</li><li>Data & Analytics</li><li>Client Success & Support</li></ul>",
+        "Our company brings together 8 expert teams:<ul><li>Business Consulting & Compliance</li><li>Strategy & Positioning</li><li>Branding & Design</li><li>Tech & Software</li><li>Digital & Social Media</li><li>CX & UX Training</li><li>Data & Analytics</li><li>Client Success & Support</li></ul>",
     },
     {
-      question: "Will I have a dedicated person?",
+      question: "Will I have a dedicated contact?",
       answer:
-        "Yes. Every client gets a dedicated business support specialist and access to our expert teams as needed.",
+        "Yes. You’ll be matched with a dedicated business support specialist who manages your experience and coordinates with our expert teams.",
     },
     {
-      question: "Is support really ongoing?",
+      question: "Is support ongoing?",
       answer:
-        "Absolutely. We don’t drop projects and disappear — we stick with you as your business evolves.",
+        "Always. We’re here for the long run — not one-off projects. As your business grows, we evolve with you.",
     },
     {
-      question: "How do I communicate with your team?",
+      question: "How do I reach your team?",
       answer:
-        "We’re available Monday–Friday, 8AM–5PM via:<ul><li>Email</li><li>Phone</li><li>Your assigned specialist</li><li>Scheduled check-ins</li></ul>",
+        "Our team is available Monday to Friday, 8AM–5PM via:<ul><li>Email</li><li>Phone</li><li>Your assigned specialist</li><li>Scheduled check-ins</li></ul>",
     },
   ],
 };

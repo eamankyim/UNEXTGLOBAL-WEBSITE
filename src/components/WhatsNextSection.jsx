@@ -2,21 +2,34 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './WhatsNextSection.css';
 
-// Imports for assets
-import whatsNextVideo from '/videos/whatsnext.mp4'; // ✅ If this is in /public/videos/, this is fine
-import FaqIcon from '../../images/icons/faq.svg';    // ✅ Adjust path based on file structure
-import NextIcon from '../../images/icons/next-icon.svg';
+import whatsNextVideo from '/videos/whatsnext.mp4';
+import FaqIcon from '../../images/icons/faq.svg';
 import GetStartedFlowCustomBtn from './GetStartedFlowCustomBtn';
 
-
 const WhatsNextSection = () => {
+  const handleCTA = () => {
+    window.gtag?.('event', 'click_get_started', {
+      event_category: 'CTA',
+      event_label: 'Whats Next Section',
+    });
+  };
+
   return (
-    <section className="whats-next-section">
-      {/* Custom Icon */}
-      <div className="custom-icon">
+    <motion.section
+      id="whats-next"
+      className="whats-next-section"
+      aria-labelledby="whats-next-heading"
+      onViewportEnter={() => {
+        window.gtag?.('event', 'view_whats_next_section', {
+          event_category: 'Section View',
+          event_label: 'Whats Next Section',
+        });
+      }}
+    >
+      <div className="custom-icon" role="img" aria-label="Question icon">
         <motion.img
           src={FaqIcon}
-          alt="Custom Icon"
+          alt="Question mark icon"
           width="48"
           height="48"
           initial={{ opacity: 0, scale: 0.5 }}
@@ -28,6 +41,7 @@ const WhatsNextSection = () => {
       <div className="whats-next-content">
         <div className="whats-next-text">
           <motion.h2
+            id="whats-next-heading"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -44,7 +58,9 @@ const WhatsNextSection = () => {
           </motion.p>
         </div>
 
-      <GetStartedFlowCustomBtn />
+        <div onClick={handleCTA}>
+          <GetStartedFlowCustomBtn />
+        </div>
 
         <div className="whats-next-video">
           <motion.video
@@ -55,13 +71,14 @@ const WhatsNextSection = () => {
             muted
             loop
             playsInline
+            aria-label="Unext promotional video"
           >
             <source src={whatsNextVideo} type="video/mp4" />
             Your browser does not support the video tag.
           </motion.video>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

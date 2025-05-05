@@ -1,6 +1,6 @@
-import React from "react";
-import "./CollaborationSection.css";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import "./CollaborationSection.css";
 
 import partner1 from "/images/icons/hubtel.png";
 import partner2 from "/images/icons/orc.png";
@@ -8,12 +8,10 @@ import partner3 from "/images/icons/fda.png";
 import partner4 from "/images/icons/meta.png";
 
 const partners = [
-  { logo: partner1, title: "Hubtel", subtitle: "Telecom & Payment Services"},
+  { logo: partner1, title: "Hubtel", subtitle: "Telecom & Payment Services" },
   { logo: partner2, title: "Office of Registrar of Companies", subtitle: "Business Registration" },
-  { logo: partner3, title: "Food & Drug board Authority", subtitle: "Product Regulation"},
-  {
-    logo: partner4, title: "Meta Business Partner", subtitle: "Digital marketing"
-  },
+  { logo: partner3, title: "Food & Drug board Authority", subtitle: "Product Regulation" },
+  { logo: partner4, title: "Meta Business Partner", subtitle: "Digital marketing" },
 ];
 
 const cardTransforms = [
@@ -23,9 +21,18 @@ const cardTransforms = [
   { x: 180, y: 180, rotate: 0 },
 ];
 
-const isMobile = window.innerWidth <= 900;
-
 const CollaborationSection = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 900);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="collab-wrapper">
       <div className="collab-left">
@@ -52,7 +59,6 @@ const CollaborationSection = () => {
                 <div className="card-info">
                   <h4>{card.title}</h4>
                   <p>{card.subtitle}</p>
-                  <span>{card.date}</span>
                 </div>
               </div>
             </div>

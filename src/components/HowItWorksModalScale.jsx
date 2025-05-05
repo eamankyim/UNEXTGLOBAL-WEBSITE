@@ -168,11 +168,8 @@ const HowItWorksModalScale = () => {
           >
             <div className="step-card">
               <div className="step-heading">
-                <img
-                  src={steps[currentStep].icon}
-                  alt="Step Icon"
-                  className={`step-icon ${steps[currentStep].iconClass || ''}`}
-                />
+              
+        
                 <div className="step-titles">
                   <h3>{steps[currentStep].title}</h3>
                   <h4>{steps[currentStep].subtitle}</h4>

@@ -152,7 +152,11 @@
       font-size: 48px;
       line-height: 90px;
     }
-  
+    
+    .heading h2 {
+      font-size: 38px;
+      line-height: 40px;
+    }
     .heading h3 {
       font-size: 20px;
       line-height: 32px;

@@ -6,6 +6,13 @@ import GetStartedFlow2 from "./GetStartedFlow2";
 import GetStartedFlowCustomBtn from "./GetStartedFlowCustomBtn";
 
 const GrowthHubSection = () => {
+  const handleClick = () => {
+    window.gtag?.("event", "click_growth_hub_get_started", {
+      event_category: "CTA Click",
+      event_label: "Growth Hub - Get Started",
+    });
+  };
+
   return (
     <motion.section
       className="growth-hub-section"
@@ -35,9 +42,14 @@ const GrowthHubSection = () => {
           All in one place. All under one roof.
         </motion.p>
 
-      
-         <GetStartedFlowCustomBtn />
-       
+        {/* Get Started button */}
+        <div
+          role="button"
+          aria-label="Start your growth journey with UNEXT"
+          onClick={handleClick}
+        >
+          <GetStartedFlowCustomBtn />
+        </div>
       </div>
     </motion.section>
   );

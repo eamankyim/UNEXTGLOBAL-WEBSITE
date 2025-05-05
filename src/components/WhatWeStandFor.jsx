@@ -1,37 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import LadyImage from "/images/cslady.png";
 import { FiChevronRight, FiChevronDown } from "react-icons/fi";
 import "./WhatWeStandFor.css";
 
-const values = [
-  {
-    title: "Strategy-first thinking",
-    content: "We don’t jump in blindly. We listen, understand, and build with purpose.",
-  },
-  {
-    title: "True partnership",
-    content: "We’re not just a vendor. We grow with you — through every pivot, win, and challenge.",
-  },
-  {
-    title: "Solutions, not just services",
-    content: "We’re here to solve real business problems — creatively and sustainably.",
-  },
-  {
-    title: "Growth-driven design & tech",
-    content: "Every brand, every system, and every strategy we build is designed for scale.",
-  },
-  {
-    title: "Trust & transparency",
-    content: "We sign NDAs, work with compliance partners, and protect your business like it’s our own.",
-  },
-];
-
 const WhatWeStandFor = () => {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const values = useMemo(() => [
+    {
+      title: "Strategy-first thinking",
+      content: "We don’t jump in blindly. We listen, understand, and build with purpose.",
+    },
+    {
+      title: "True partnership",
+      content: "We’re not just a vendor. We grow with you — through every pivot, win, and challenge.",
+    },
+    {
+      title: "Solutions, not just services",
+      content: "We’re here to solve real business problems — creatively and sustainably.",
+    },
+    {
+      title: "Growth-driven design & tech",
+      content: "Every brand, every system, and every strategy we build is designed for scale.",
+    },
+    {
+      title: "Trust & transparency",
+      content: "We sign NDAs, work with compliance partners, and protect your business like it’s our own.",
+    },
+  ], []);
 
   const toggleAccordion = (index) => {
-    setOpenIndex(index === openIndex ? -1 : index);
+    setOpenIndex(index === openIndex ? null : index);
   };
 
   return (
@@ -63,6 +63,11 @@ const WhatWeStandFor = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   onClick={() => toggleAccordion(index)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") toggleAccordion(index);
+                  }}
                 >
                   <div className="accordion-title">
                     <span className={`bullet-icon ${openIndex === index ? "active" : ""}`} />
@@ -97,7 +102,12 @@ const WhatWeStandFor = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <img src={LadyImage} alt="Customer Success Lady" />
+            <img
+              src={LadyImage}
+              alt="Customer Success Lady"
+              role="img"
+              aria-label="A professional woman representing customer success"
+            />
           </motion.div>
         </div>
       </motion.div>

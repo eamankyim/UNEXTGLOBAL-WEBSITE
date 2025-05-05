@@ -30,8 +30,11 @@ const ServicesHero = () => {
       >
         <img
           src={Image1}
-          alt="Hero Visual"
+          alt="Professional team collaborating on strategy and growth."
           className="serviceshero-image"
+          loading="lazy"
+          role="img"
+          aria-label="Professional team collaborating on strategy and growth"
         />
       </motion.div>
     </div>

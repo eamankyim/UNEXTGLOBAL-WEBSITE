@@ -7,11 +7,19 @@ import "./HeroSection2.css";
 const HeroSection2 = () => {
   return (
     <motion.section
+      id="hero-growth"
       className="hero-section"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
+      onViewportEnter={() => {
+        window.gtag?.('event', 'view_hero_section', {
+          event_category: 'Section View',
+          event_label: 'Hero Growth Section'
+        });
+      }}
+      aria-labelledby="hero-growth-heading"
     >
       <div className="slider-wrapper">
         <motion.div
@@ -23,14 +31,15 @@ const HeroSection2 = () => {
         >
           <div className="top-row">
             <div className="heading">
-              <motion.h3
+              <motion.h2
+                id="hero-growth-heading"
                 initial={{ x: -30, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                Super charge your business
-              </motion.h3>
+                Supercharge your business
+              </motion.h2>
               <motion.h1
                 initial={{ x: -30, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
@@ -40,7 +49,7 @@ const HeroSection2 = () => {
                 GR
                 <img
                   src={GrowthIcon}
-                  alt="Growth Icon"
+                  alt="Growth"
                   className="growth-icon"
                 />
                 WTH
@@ -71,7 +80,7 @@ const HeroSection2 = () => {
         >
           <img
             src={SuperChargewoman}
-            alt="Super charge woman"
+            alt="Illustration of a businesswoman being supercharged"
             className="supercharge-woman"
           />
         </motion.div>

@@ -3,21 +3,25 @@ import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import './HowItWorksModal.css';
 
+
+
+import CancelCircleIcon from '../../images/icons/cancel-circle.svg';
+import LeftCircleIcon from '../../images/icons/left-circle.svg';
+import RightCircleIcon from '../../images/icons/right-circle.svg';
+
 // Steps Data
 const steps = [
   {
     title: 'Step 1: Tell us who you are',
     subtitle: 'We believe in growing with you.',
     description: 'That’s all you need to do to get started. No paperwork, no pressure. Once you submit your details, our team reaches out to schedule a discovery call at a time that works for you.',
-    icon: '/images/icons/starter-icon1.svg',
-    iconClass: 'styled-icon',
+    
   },
   {
     title: "Step 2: Let's talk about your dreams",
     subtitle: 'Once your call is booked, we connect with you directly.',
     description: 'You tell us about your business — or the one you’re dreaming of. What are you doing now? Where do you want to go? We’ll listen, ask the right questions, and begin shaping how UNEXT can support you as your growth partner.',
-    icon: '/images/icons/starter-icon1.svg',
-    iconClass: 'styled-icon',
+    
   },
   {
     title: 'Step 3: Strategy comes first',
@@ -26,8 +30,7 @@ const steps = [
 <strong>🔹 Already registered?</strong> Perfect.<br>
 <strong>🔹 Not registered yet?</strong> No worries — we’ll handle that for you.<br><br>
 This step ensures your foundation is solid and aligned with your long-term goals.`,
-    icon: '/images/icons/starter-icon1.svg',
-    iconClass: 'styled-icon',
+   
   },
   {
     title: 'Step 4: Setup, branding & identity',
@@ -40,8 +43,7 @@ This step ensures your foundation is solid and aligned with your long-term goals
 <strong>🔹 Templates</strong> – branded invoices, proposals, and more<br><br>
 <strong>💰 One-time Setup Fee: GHS 2,950.00</strong><br>
 This covers the entire setup, branding, and business launch essentials.`,
-    icon: '/images/icons/starter-icon1.svg',
-    iconClass: 'styled-icon',
+   
   },
   {
     title: 'Step 5: Ongoing support — we stay with you',
@@ -54,15 +56,14 @@ This covers the entire setup, branding, and business launch essentials.`,
 <strong>🔹 Business Guidance</strong> – regular strategic advice tailored to your journey<br><br>
 <strong>💰 Optional monthly support: GHS 290/month</strong><br>
 Choose this if you want to stay consistent, visible, and supported every step of the way.`,
-    icon: '/images/icons/starter-icon1.svg',
-    iconClass: 'styled-icon',
+   
   },
 ];
 
 const HowItWorksModalStarter = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
-  const [direction, setDirection] = useState(1); // 1 = forward, -1 = backward
+  const [direction, setDirection] = useState(1);
 
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
@@ -102,16 +103,13 @@ const HowItWorksModalStarter = () => {
         exit={{ opacity: 0, scale: 0.8 }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
       >
-
-        {/* Topbar */}
         <div className="howitworks-topbar">
           <h2 className="modal-title">How it works – Starter Plan</h2>
           <button className="close-button" onClick={closeModal}>
-            <img src="/images/icons/cancel-circle.svg" alt="Close" />
+            <img src={CancelCircleIcon} alt="Close" />
           </button>
         </div>
 
-        {/* Stepper */}
         <div className="stepper">
           {steps.map((_, index) => (
             <div key={index} className="step-wrapper">
@@ -126,7 +124,6 @@ const HowItWorksModalStarter = () => {
           ))}
         </div>
 
-        {/* Step Content with Directional Animation */}
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={currentStep}
@@ -138,20 +135,14 @@ const HowItWorksModalStarter = () => {
             className="step-content"
           >
             <div className="step-card">
-              {/* Title and Icon */}
               <div className="step-heading">
-                <img
-                  src={steps[currentStep].icon}
-                  alt="Step Icon"
-                  className={`step-icon ${steps[currentStep].iconClass || ''}`}
-                />
+               
                 <div className="step-titles">
                   <h3>{steps[currentStep].title}</h3>
                   <h4>{steps[currentStep].subtitle}</h4>
                 </div>
               </div>
 
-              {/* Description with HTML support */}
               <div
                 className="step-description"
                 dangerouslySetInnerHTML={{ __html: steps[currentStep].description }}
@@ -160,20 +151,18 @@ const HowItWorksModalStarter = () => {
           </motion.div>
         </AnimatePresence>
 
-        {/* Navigation Buttons */}
         <div className="step-buttons">
           {currentStep !== 0 && (
             <button className="prev-btn" onClick={handlePrev}>
-              <img src="/images/icons/left-circle.svg" alt="Previous" />
+              <img src={LeftCircleIcon} alt="Previous" />
             </button>
           )}
           {currentStep !== steps.length - 1 && (
             <button className="next-btn" onClick={handleNext}>
-              <img src="/images/icons/right-circle.svg" alt="Next" />
+              <img src={RightCircleIcon} alt="Next" />
             </button>
           )}
         </div>
-
       </motion.div>
     </div>
   );

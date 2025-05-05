@@ -1,17 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import HowItWorksModalStarter from './HowItWorksModalStarter';
 import HowItWorksModalGrowth from './HowItWorksModalGrowth';
 import HowItWorksModalScale from './HowItWorksModalScale';
 
 import GetStartedStarter from './GetStartedStarter';
-
-
 import './PricingSection.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import GetStartedFlow2 from './GetStartedFlow2';
 
 const PricingSection = () => {
+
+  // State to hold the selected plan for form submission
+  const [selectedPlan, setSelectedPlan] = useState('');
+
+  // Tracking function to log which plan is clicked
+  const trackPlanClick = (plan) => {
+    // Log to Google Analytics
+    if (window.ga) {
+      window.ga('send', 'event', 'Pricing', 'click', plan);
+    }
+    
+    // Set the selected plan in the state
+    setSelectedPlan(plan);
+  };
+
   return (
     <div className='pricing-wrapper'>
       <section className="pricing-section">
@@ -46,9 +59,8 @@ const PricingSection = () => {
               <FeatureItem text="Business guidance" />
             </div>
             <div className="pricing-buttons">
-            <HowItWorksModalStarter />
-            <GetStartedFlow2 />
-           
+              <HowItWorksModalStarter aria-label="Learn more about the Starter Plan" />
+              <GetStartedFlow2 plan="starter" aria-label="Get started with the Starter Plan" onClick={() => trackPlanClick('Starter')} />
             </div>
           </div>
 
@@ -79,8 +91,8 @@ const PricingSection = () => {
               <FeatureItem text="Basic website updates" />
             </div>
             <div className="pricing-buttons">
-            <HowItWorksModalGrowth />
-            <GetStartedFlow2 />
+              <HowItWorksModalGrowth aria-label="Learn more about the Growth Plan" />
+              <GetStartedFlow2 plan="growth" aria-label="Get started with the Growth Plan" onClick={() => trackPlanClick('Growth')} />
             </div>
           </div>
 
@@ -111,12 +123,18 @@ const PricingSection = () => {
               <FeatureItem text="2 short-form video ads/reels" />
             </div>
             <div className="pricing-buttons">
-            <HowItWorksModalScale />
-            <GetStartedFlow2 />
+              <HowItWorksModalScale aria-label="Learn more about the Scale Plan" />
+              <GetStartedFlow2 plan="scale" aria-label="Get started with the Scale Plan" onClick={() => trackPlanClick('Scale')} />
             </div>
           </div>
         </div>
       </section>
+
+      {/* Hidden Form (for submission) */}
+      <form id="get-started-form" action="your-email-endpoint" method="POST">
+        <input type="hidden" name="plan" value={selectedPlan} />
+        {/* Other form fields like name, email, phone */}
+      </form>
     </div>
   );
 };

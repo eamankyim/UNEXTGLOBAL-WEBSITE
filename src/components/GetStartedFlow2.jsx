@@ -6,7 +6,6 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './GetStartedFlow.css';
 
-// ✅ Imported Icons
 import CloseIcon from '../../images/icons/cancel-circle.svg';
 import LeftArrowIcon from '../../images/icons/left-circle.svg';
 import RightArrowIcon from '../../images/icons/right-circle.svg';
@@ -36,10 +35,7 @@ const GetStartedFlow2 = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
     setShakeError(null);
   };
 
@@ -84,7 +80,6 @@ const GetStartedFlow2 = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!validateForm()) return;
-
     setIsSubmitting(true);
     setProgress(20);
     sendEmail();
@@ -163,8 +158,6 @@ const GetStartedFlow2 = () => {
                         value={formData.name}
                         onChange={handleInputChange}
                         placeholder="John Doe"
-                        pattern="[A-Za-z\s]*"
-                        inputMode="text"
                         required
                         className={shakeError === 'name' ? 'shake' : ''}
                       />
@@ -179,8 +172,6 @@ const GetStartedFlow2 = () => {
                         value={formData.phone}
                         onChange={handleInputChange}
                         placeholder="(+233) 000 000 000"
-                        inputMode="tel"
-                        pattern="[\d\+\-\(\)\s]*"
                         required
                         className={shakeError === 'phone' ? 'shake' : ''}
                       />
@@ -195,7 +186,6 @@ const GetStartedFlow2 = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         placeholder="example@gmail.com"
-                        pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
                         required
                         className={shakeError === 'email' ? 'shake' : ''}
                       />
@@ -213,7 +203,7 @@ const GetStartedFlow2 = () => {
                   </div>
                 )}
 
-                {/* Navigation */}
+                {/* Navigation Buttons */}
                 <div className="navigation-buttons">
                   {currentStep > 1 && (
                     <button onClick={previousStep} className="nav-button">
@@ -225,7 +215,11 @@ const GetStartedFlow2 = () => {
                       <img src={RightArrowIcon} alt="Next" />
                     </button>
                   ) : (
-                    <button onClick={handleSubmit} className="submit-button">
+                    <button
+                      onClick={handleSubmit}
+                      className="submit-button"
+                      disabled={isSubmitting}
+                    >
                       Submit
                     </button>
                   )}
@@ -237,7 +231,7 @@ const GetStartedFlow2 = () => {
         document.body
       )}
 
-      {/* Thank You Page */}
+      {/* Thank You Modal */}
       {createPortal(
         <AnimatePresence>
           {isThankYouPage && (

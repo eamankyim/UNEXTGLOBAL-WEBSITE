@@ -11,8 +11,16 @@ import Icon3 from "/images/icons/icon3.svg";
 const AboutSection = () => {
   return (
     <section className="aboutmission-wrapper">
-      <img src={LeftArrowBlue} alt="" className="aboutmission-arrow left" />
-      <img src={RightArrowOrange} alt="" className="aboutmission-arrow right" />
+      <img
+        src={LeftArrowBlue}
+        alt="Left arrow pointing left"
+        className="aboutmission-arrow left"
+      />
+      <img
+        src={RightArrowOrange}
+        alt="Right arrow pointing right"
+        className="aboutmission-arrow right"
+      />
 
       <div className="aboutmission-content">
         <motion.div
@@ -30,7 +38,8 @@ const AboutSection = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <p>
-              <strong>UNEXT</strong> is your all-in-one business growth partner — combining branding, strategy, tech, design, and customer experience into one powerful platform.
+              <strong>UNEXT</strong> is your all-in-one business growth partner —
+              combining branding, strategy, tech, design, and customer experience into one powerful platform.
               Whether you’re starting from scratch or scaling up, we’re here to guide you from Structure to Strategy — and beyond.
             </p>
           </motion.div>
@@ -42,7 +51,7 @@ const AboutSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3>Our mission</h3>
+            <h3>Our Mission</h3>
             <p>
               To empower SMEs to grow smarter, faster, and stronger — through strategic support,
               powerful tools, and expert guidance that adapts with you.
@@ -75,7 +84,11 @@ const AboutSection = () => {
               <div className="stat-top">
                 <div className="stat-number">{stat.number}</div>
                 <div className="stat-icon-wrapper">
-                  <img src={stat.icon} alt={`${stat.label} Icon`} className="stat-icon" />
+                  <img
+                    src={stat.icon}
+                    alt={`${stat.label} Icon`}
+                    className="stat-icon"
+                  />
                 </div>
               </div>
               <div className="stat-label">{stat.label}</div>
