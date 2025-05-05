@@ -1,5 +1,5 @@
 .growth-hub-section {
-  background-color: #f4fcfd;
+  background-color: #f5f6fa;
   padding: 4rem 1rem;
   text-align: center;
 }
@@ -26,19 +26,3 @@ p {
   margin-bottom: 2rem;
 }
 
-.growth-hub-section .cta-button {
-  background-color: #f59e0b;
-  color: white;
-  padding: 016px;
-  border: none;
-  border-radius: 8px;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 600;
-  transition: background 0.3s ease;
-}
-
-.growth-hub-section .cta-button:hover {
-  background-color: #d97706;
-}

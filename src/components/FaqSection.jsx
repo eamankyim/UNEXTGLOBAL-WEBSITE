@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import faqIcon from "/images/icons/faq.svg";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import "./FaqSection.css";
+
 
 const faqData = {
   General: [
@@ -116,6 +118,23 @@ const faqData = {
   ],
 };
 
+const containerVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
 const FaqSection = () => {
   const categories = Object.keys(faqData);
   const [activeTab, setActiveTab] = useState(categories[0]);
@@ -126,17 +145,23 @@ const FaqSection = () => {
   };
 
   return (
-    <section className="faq-section">
-      <div className="faq-header">
+    <motion.section
+      className="faq-section"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={containerVariants}
+    >
+      <motion.div className="faq-header" variants={itemVariants}>
         <img src={faqIcon} alt="FAQ Icon" className="faq-icon" />
         <h2>Frequently Asked Questions</h2>
         <p>
           Got questions? We've got answers. Here’s everything you need to know
           before getting started with <strong>uNext</strong>.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="faq-tabs">
+      <motion.div className="faq-tabs" variants={itemVariants}>
         {categories.map((cat) => (
           <button
             key={cat}
@@ -149,13 +174,14 @@ const FaqSection = () => {
             {cat}
           </button>
         ))}
-      </div>
+      </motion.div>
 
-      <div className="faq-list">
+      <motion.div className="faq-list" variants={containerVariants}>
         {faqData[activeTab].map((item, index) => (
-          <div
+          <motion.div
             key={index}
             className={`faq-item ${openIndex === index ? "open" : ""}`}
+            variants={itemVariants}
             onClick={() => toggleOpen(index)}
           >
             <div className="faq-question">
@@ -166,24 +192,36 @@ const FaqSection = () => {
                 <ChevronRight size={18} />
               )}
             </div>
-            {openIndex === index && (
-              <div
-                className="faq-answer"
-                dangerouslySetInnerHTML={{ __html: item.answer }}
-              />
-            )}
-          </div>
-        ))}
-      </div>
 
-      <div className="faq-footer">
+            <AnimatePresence initial={false}>
+              {openIndex === index && (
+                <motion.div
+                  className="faq-answer"
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div
+                    dangerouslySetInnerHTML={{ __html: item.answer }}
+                  />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        ))}
+      </motion.div>
+
+      <motion.div className="faq-footer" variants={itemVariants}>
         <p>
           Still curious? 🗨️{" "}
-          <span className="talk-link">Let’s Talk</span> — we’re ready when you
+          <span className="talk-link"><a href="https://wa.me/233209735525?text=Hello%20Unext%2C%20I%27m%20interested%20in%20your%20services."
+              rel="noopener noreferrer"
+              target="_blank" className="talk-link">Let’s talk </a></span> — we’re ready when you
           are.
         </p>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 

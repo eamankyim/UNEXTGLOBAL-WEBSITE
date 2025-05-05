@@ -2,44 +2,54 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './FloatingImpactSection.css';
 
+// Icon imports
+import iconTrophy from '../../images/icons/trophy.svg';
+import iconGraph from '../../images/icons/graph.svg';
+import iconStar from '../../images/icons/star.svg';
+import iconCamera from '../../images/icons/camera.svg';
+import iconMoney from '../../images/icons/money.svg';
+import iconLogoTest from '../../images/icons/logo-test.svg';
+import iconBounce from '../../images/icons/bounce.svg';
+import iconFollowers from '../../images/icons/followers.svg';
+
 const cards = [
   {
-    icon: 'images/icons/trophy.svg',
+    icon: iconTrophy,
     title: 'Your chatbot handled 80% of customer queries',
     description: 'Let’s fine-tune responses for even higher satisfaction',
   },
   {
-    icon: 'images/icons/graph.svg',
+    icon: iconGraph,
     title: 'Traffic spike after your last blog post: +67%',
     description: 'That topic hit — let’s write a follow-up',
   },
   {
-    icon: 'images/icons/star.svg',
+    icon: iconStar,
     title: 'NPS score increased to 8.7',
     description: 'Your customer experience is improving',
   },
   {
-    icon: 'images/icons/camera.svg',
+    icon: iconCamera,
     title: 'Your reels reach is now 15k+ per post',
     description: 'Short-form video is working for you.',
   },
   {
-    icon: 'images/icons/money.svg',
+    icon: iconMoney,
     title: 'You made GHC87,000.00 profit this week',
     description: 'This is 500% increase compared to last week',
   },
   {
-    icon: 'images/icons/logo-test.svg',
+    icon: iconLogoTest,
     title: 'New logo test outperformed old one by 3x',
     description: 'You’re building stronger visual recognition',
   },
   {
-    icon: 'images/icons/bounce.svg',
+    icon: iconBounce,
     title: 'Your bounce rate dropped 18%',
     description: 'Your new content strategy is working',
   },
   {
-    icon: 'images/icons/followers.svg',
+    icon: iconFollowers,
     title: 'Followers up by 800 this week',
     description: 'Let’s introduce a loyalty push or campaign',
   },
@@ -153,13 +163,13 @@ const FloatingImpactSection = () => {
             if (hiddenCards[j]) continue;
             const rect2 = cardRefs.current[j]?.current?.getBoundingClientRect();
             if (rect1 && rect2 && isColliding(rect1, rect2)) {
-              setHiddenCards(prev => {
+              setHiddenCards((prev) => {
                 const updated = [...prev];
                 updated[j] = true;
                 return updated;
               });
               setTimeout(() => {
-                setHiddenCards(prev => {
+                setHiddenCards((prev) => {
                   const updated = [...prev];
                   updated[j] = false;
                   return updated;
@@ -176,7 +186,7 @@ const FloatingImpactSection = () => {
   }, [isMobile, currentCard, paused, hiddenCards]);
 
   return (
-    <div className='unext-serviceshero-wrapper'>
+    <div className="unext-serviceshero-wrapper">
       <section className="unext-floating-section">
         <div className="unext-floating-bg" />
         <div className="unext-floating-content">
@@ -195,7 +205,6 @@ const FloatingImpactSection = () => {
               <AnimatePresence mode="wait">
                 <MobileCard key={currentCard} card={cards[currentCard]} />
               </AnimatePresence>
-             
             </div>
           ) : (
             <div className="unext-floating-cards">

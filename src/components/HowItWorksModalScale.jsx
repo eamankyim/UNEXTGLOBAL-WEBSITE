@@ -3,41 +3,91 @@ import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import './HowItWorksModal.css';
 
-// Steps Data for Scale Plan
-const scaleSteps = [
+import icon1 from '../../images/icons/starter-icon1.svg';
+import closeIcon from '../../images/icons/cancel-circle.svg';
+import leftArrow from '../../images/icons/left-circle.svg';
+import rightArrow from '../../images/icons/right-circle.svg';
+
+const steps = [
   {
-    title: 'Growth Strategy & Planning',
-    subtitle: 'Strategizing for large-scale growth.',
-    description: 'Focused consultations on strategic growth, optimizing operations for scale, and leveraging automation.',
-    icon: '/images/icons/scale-icon1.svg',
+    title: 'Step 1: Let’s Kick Things Off',
+    subtitle: 'Just drop your name, email, and phone number.',
+    description: `That’s all it takes to begin. Our team will reach out quickly to schedule your discovery call — at your convenience — to dive into your business and goals.`,
+    icon: icon1,
     iconClass: 'styled-icon',
   },
   {
-    title: 'Brand Strengthening',
-    subtitle: 'Strengthening your brand for maximum impact.',
-    description: 'Brand refinement and repositioning to target larger markets and engage new audiences effectively.',
-    icon: '/images/icons/scale-icon2.svg',
+    title: 'Step 2: Strategy Begins With You',
+    subtitle: 'We talk, listen, and understand — in depth.',
+    description: `In your discovery session, we’ll explore your current business state, brand perception, customer journey, and where you want to scale next.<br><br>From content gaps to automation potential, we assess it all.`,
+    icon: icon1,
     iconClass: 'styled-icon',
   },
   {
-    title: 'Advanced Launch Assets',
-    subtitle: 'Providing resources for impactful launches.',
-    description: 'Custom launch kits, advanced promotional materials, and optimized email marketing automation.',
-    icon: '/images/icons/scale-icon3.svg',
+    title: 'Step 3: Strategic Foundation, Systems & Tools',
+    subtitle: 'Everything in Growth — and then some.',
+    description: `
+      This step sets the tone for serious business growth, with structure and precision.<br><br>
+      <strong>Included from Starter + Growth:</strong><br>
+      ✦ Business registration assistance (if needed)<br>
+      ✦ Full brand strategy & positioning document<br>
+      ✦ Messaging & tone guide<br>
+     ✦ Google Workspace + CRM setup<br>
+      ✦ Newsletter and contact systems<br>
+     ✦ Company onboarding docs<br>
+      ✦ Social media optimization<br>
+     ✦ Blog-ready website (up to 5 pages) + training<br><br>
+      <strong>New in Scale:</strong><br>
+     ✦ <strong>Content Strategy Playbook</strong><br>
+      ✦ <strong>Media Kit & Brand Ambassador Assets</strong><br>
+      ✦ <strong>Referral/Loyalty Program Framework</strong><br>
+      ✦ <strong>Campaign Landing Pages</strong><br>
+      ✦ <strong>Advanced SEO Setup</strong><br>
+      ✦ <strong>Analytics Dashboard</strong><br><br>
+      This is about clarity, automation, and decision-making power.
+    `,
+    icon: icon1,
     iconClass: 'styled-icon',
   },
   {
-    title: 'Comprehensive Digital Strategy',
-    subtitle: 'Expanding your digital presence with purpose.',
-    description: 'Advanced social media campaigns, content marketing, and SEO to increase visibility and lead generation.',
-    icon: '/images/icons/scale-icon4.svg',
+    title: 'Step 4: Visual Identity, Content Engine & Online Impact',
+    subtitle: 'Your brand becomes an experience — online and off.',
+    description: `
+      <strong>Everything in Starter + Growth included:</strong><br>
+      ✦ Logo, brand manual<br>
+      ✦ Flyers, cards, templates<br>
+      ✦ Website setup<br>
+      ✦ Social media kit<br>
+      ✦ Onboarding docs<br>
+      ✦ Newsletter system<br>
+      ✦ Basic web presence<br><br>
+      <strong>Plus in Scale:</strong><br>
+      ✦ <strong>Seasonal Marketing Kits</strong><br>
+      ✦ <strong>Web Content Updates</strong><br>
+      ✦ <strong>Landing Pages</strong><br>
+      ✦ <strong>Fully Managed Social Presence</strong><br>
+      ✦ <strong>2 Short-Form Video Ads/Reels per month</strong><br><br>
+      Your brand won’t just look the part — it will perform at every touchpoint.
+    `,
+    icon: icon1,
     iconClass: 'styled-icon',
   },
   {
-    title: 'Premium Ongoing Support & Analysis',
-    subtitle: 'Continuous support and detailed performance analysis.',
-    description: 'Full social media management, marketing performance tracking, and priority support for scaling businesses.',
-    icon: '/images/icons/scale-icon5.svg',
+    title: 'Step 5: Ongoing Power Support & Growth Tracking',
+    subtitle: 'We don’t leave your growth to chance — we track, improve, and adapt.',
+    description: `
+      ✦ <strong>12 Social Media Posts/Month</strong><br>
+      ✦ <strong>2 Short-Form Reels/Ads/Month</strong><br>
+      ✦ <strong>Full Social Media Management</strong><br>
+      ✦ <strong>Newsletter Assistance</strong><br>
+      ✦ <strong>Monthly Strategy Check-ins</strong><br>
+      ✦ <strong>Quarterly Growth Sessions</strong><br>
+      ✦ <strong>Ongoing SEO Optimization</strong><br>
+      ✦ <strong>Monthly Analytics Reports</strong><br>
+      ✦ <strong>Dedicated Support Team</strong><br><br>
+      <strong>💰 GHS 2,000/month</strong> — built for growing, scaling, and leading brands that want clarity, polish, and serious results.
+    `,
+    icon: icon1,
     iconClass: 'styled-icon',
   },
 ];
@@ -45,24 +95,19 @@ const scaleSteps = [
 const HowItWorksModalScale = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
+  const [direction, setDirection] = useState(1);
 
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
+    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+    return () => (document.body.style.overflow = 'auto');
   }, [isOpen]);
 
   const handleNext = () => {
-    if (currentStep < scaleSteps.length - 1) {
+    if (currentStep < steps.length - 1) {
+      setDirection(1);
       setCurrentStep(prev => prev + 1);
     } else {
       closeModal();
@@ -71,11 +116,13 @@ const HowItWorksModalScale = () => {
 
   const handlePrev = () => {
     if (currentStep > 0) {
+      setDirection(-1);
       setCurrentStep(prev => prev - 1);
     }
   };
 
   const handleStepClick = (index) => {
+    setDirection(index > currentStep ? 1 : -1);
     setCurrentStep(index);
   };
 
@@ -88,17 +135,15 @@ const HowItWorksModalScale = () => {
         exit={{ opacity: 0, scale: 0.8 }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
       >
-        {/* Close Button at the Top Right */}
         <div className="howitworks-topbar">
           <h2 className="modal-title">How it works – Scale Plan</h2>
           <button className="close-button" onClick={closeModal}>
-            <img src="/images/icons/cancel-circle.svg" alt="Close" />
+            <img src={closeIcon} alt="Close" />
           </button>
         </div>
 
-        {/* Stepper with clickable numbers */}
         <div className="stepper">
-          {scaleSteps.map((_, index) => (
+          {steps.map((_, index) => (
             <div key={index} className="step-wrapper">
               <div
                 className={`step-circle ${index === currentStep ? 'active' : ''}`}
@@ -106,51 +151,51 @@ const HowItWorksModalScale = () => {
               >
                 {index + 1}
               </div>
-              {index !== scaleSteps.length - 1 && <div className="step-line"></div>}
+              {index !== steps.length - 1 && <div className="step-line"></div>}
             </div>
           ))}
         </div>
 
-        {/* Step Content */}
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={currentStep}
-            initial={{ opacity: 0, x: 50 }}
+            custom={direction}
+            initial={{ opacity: 0, x: direction === 1 ? 50 : -50 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
+            exit={{ opacity: 0, x: direction === 1 ? -50 : 50 }}
             transition={{ duration: 0.4 }}
             className="step-content"
           >
             <div className="step-card">
-              {/* Title and Icon */}
               <div className="step-heading">
                 <img
-                  src={scaleSteps[currentStep].icon}
+                  src={steps[currentStep].icon}
                   alt="Step Icon"
-                  className={`step-icon ${scaleSteps[currentStep].iconClass || ''}`}
+                  className={`step-icon ${steps[currentStep].iconClass || ''}`}
                 />
                 <div className="step-titles">
-                  <h3>{scaleSteps[currentStep].title}</h3>
-                  <h4>{scaleSteps[currentStep].subtitle}</h4>
+                  <h3>{steps[currentStep].title}</h3>
+                  <h4>{steps[currentStep].subtitle}</h4>
                 </div>
               </div>
 
-              {/* Description */}
-              <p>{scaleSteps[currentStep].description}</p>
+              <div
+                className="step-description"
+                dangerouslySetInnerHTML={{ __html: steps[currentStep].description }}
+              />
             </div>
           </motion.div>
         </AnimatePresence>
 
-        {/* Buttons */}
         <div className="step-buttons">
           {currentStep !== 0 && (
             <button className="prev-btn" onClick={handlePrev}>
-              <img src="/images/icons/left-circle.svg" alt="Previous" />
+              <img src={leftArrow} alt="Previous" />
             </button>
           )}
-          {currentStep !== scaleSteps.length - 1 && (
+          {currentStep !== steps.length - 1 && (
             <button className="next-btn" onClick={handleNext}>
-              <img src="/images/icons/right-circle.svg" alt="Next" />
+              <img src={rightArrow} alt="Next" />
             </button>
           )}
         </div>
@@ -163,11 +208,8 @@ const HowItWorksModalScale = () => {
       <button className="btn-outline" onClick={openModal}>
         How it works
       </button>
-
       {createPortal(
-        <AnimatePresence>
-          {isOpen && modalContent}
-        </AnimatePresence>,
+        <AnimatePresence>{isOpen && modalContent}</AnimatePresence>,
         document.body
       )}
     </>

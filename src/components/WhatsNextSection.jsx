@@ -1,7 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './WhatsNextSection.css';
-import whatsNextVideo from '/videos/whatsnext.mp4'; // Adjust path as needed
+
+// Imports for assets
+import whatsNextVideo from '/videos/whatsnext.mp4'; // ✅ If this is in /public/videos/, this is fine
+import FaqIcon from '../../images/icons/faq.svg';    // ✅ Adjust path based on file structure
+import NextIcon from '../../images/icons/next-icon.svg';
+import GetStartedFlowCustomBtn from './GetStartedFlowCustomBtn';
+
 
 const WhatsNextSection = () => {
   return (
@@ -9,7 +15,7 @@ const WhatsNextSection = () => {
       {/* Custom Icon */}
       <div className="custom-icon">
         <motion.img
-          src="images/icons/question-mark.svg"
+          src={FaqIcon}
           alt="Custom Icon"
           width="48"
           height="48"
@@ -26,7 +32,7 @@ const WhatsNextSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            What's Next? uNext
+            What's Next? U are Next!
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: -20 }}
@@ -34,20 +40,11 @@ const WhatsNextSection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             This is the platform built to elevate your business. <br />
-            Smart solutions, powerful tools, and ongoing support — this is where you grow, from S to S — powered by strategy. Get started.
+            Smart solutions, powerful tools, and ongoing support — this is where you grow, from S to S — powered by strategy.
           </motion.p>
         </div>
 
-        <motion.div
-          className="cta"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <a href="#get-started" className="get-started-button">
-            Get started <img src="images/icons/next-icon.svg" alt="Icon" className="cta-icon" />
-          </a>
-        </motion.div>
+      <GetStartedFlowCustomBtn />
 
         <div className="whats-next-video">
           <motion.video

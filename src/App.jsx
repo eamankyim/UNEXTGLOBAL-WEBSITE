@@ -1,4 +1,3 @@
-// App.js
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
@@ -8,10 +7,12 @@ import Services from "./pages/Services";
 import Pricing from "./pages/Pricing";
 import FooterSection from './components/FooterSection';
 import About from "./pages/About";
+import ScrollToTop from "./components/ScrollToTop"; // ✅ import here
 
 const App = () => {
   return (
     <Router>
+      <ScrollToTop /> {/* ✅ scroll to top on route change */}
       <div className="MainContainer">
         <Header />
         <Routes>

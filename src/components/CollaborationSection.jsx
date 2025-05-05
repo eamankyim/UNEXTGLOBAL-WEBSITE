@@ -2,20 +2,17 @@ import React from "react";
 import "./CollaborationSection.css";
 import { motion } from "framer-motion";
 
-import partner1 from "/images/icons/partner1.png";
-import partner2 from "/images/icons/partner1.png";
-import partner3 from "/images/icons/partner1.png";
-import partner4 from "/images/icons/partner1.png";
+import partner1 from "/images/icons/hubtel.png";
+import partner2 from "/images/icons/orc.png";
+import partner3 from "/images/icons/fda.png";
+import partner4 from "/images/icons/meta.png";
 
 const partners = [
-  { logo: partner1, title: "Hubtel", subtitle: "Telecom & Payment Services", date: "Sep 3" },
-  { logo: partner2, title: "Registry General department", subtitle: "Business Registration", date: "Sep 5" },
-  { logo: partner3, title: "Food & Drug board Authority", subtitle: "Product Regulation", date: "Sep 7" },
+  { logo: partner1, title: "Hubtel", subtitle: "Telecom & Payment Services"},
+  { logo: partner2, title: "Office of Registrar of Companies", subtitle: "Business Registration" },
+  { logo: partner3, title: "Food & Drug board Authority", subtitle: "Product Regulation"},
   {
-    logo: partner4,
-    title: "Food & Drug board Authority",
-    subtitle: "Registry General department",
-    date: "Sep 8"
+    logo: partner4, title: "Meta Business Partner", subtitle: "Digital marketing"
   },
 ];
 

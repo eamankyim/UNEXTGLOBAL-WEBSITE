@@ -34,7 +34,7 @@ body {
   background-color: transparent; /* change this */
   padding: 8px 32px 8px 8px;
   border: 2px solid transparent; /* match background to avoid visible border before scroll */
-  border-radius: 32px;
+  border-radius: 16px;
   box-sizing: border-box;
   gap: 32px;
   position: relative;
@@ -143,15 +143,21 @@ body {
 /* Mobile Menu */
 .myheader-left-side.myheader-mobile-open {
   position: fixed;
-  inset: 0;
-  background-color: #fff;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  background-color: #ffffff;
+  border-radius: 8px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 10;
-  padding: 100px 20px;
+  padding: 0 20px;
   gap: 40px;
   transition: all 0.3s ease;
+  overflow: hidden; /* prevents scrolling inside menu */
 }
 
 .myheader-left-side.myheader-mobile-open .myheader-nav-links {
@@ -202,7 +208,7 @@ body {
 /* Responsive */
 @media (max-width: 1000px) {
   .myheader-header-wrapper {
-    padding: 1px 24px;
+    padding: 1px 12px;
   }
 
   .myheader-container {
@@ -229,7 +235,13 @@ body {
   .myheader-mobile-controls {
     display: flex;
   }
-
+  .myheader-nav-links a {
+    margin: 12px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-size: 16pt;
+  }
   .myheader-hamburger {
     display: flex;
   }
@@ -239,21 +251,3 @@ body {
   }
 }
 
-
-
-.myheader-pricing-tab {
-  background-color: #000000; /* or any color you want */
-  padding: 8px 16px;
-  border-radius: 32px;
-  color: #ffffff!important;
-  font-weight: 600;
-}
-
-
-.myheader-pricing-tab:hover {
-  background-color: #000000; /* or any color you want */
-  padding: 8px 16px;
-  border-radius: 32px;
-  color: #FF9D00!important;
-  font-weight: 500;
-}

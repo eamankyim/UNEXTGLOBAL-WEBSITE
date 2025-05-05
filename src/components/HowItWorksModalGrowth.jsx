@@ -3,41 +3,79 @@ import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import './HowItWorksModal.css';
 
-// Steps Data for Growth Plan
-const growthSteps = [
+const steps = [
   {
-    title: 'Advanced Strategy & Consultation',
-    subtitle: 'Tailored strategies for scaling.',
-    description: 'A deep dive into scaling your business, targeting growth opportunities, and refining your core operations.',
-    icon: '/images/icons/growth-icon1.svg',
+    title: 'Step 1: Start With a Quick Hello',
+    subtitle: 'Enter your name, email, and phone number.',
+    description: `Once you submit your details, our team reaches out to book a discovery call that fits your schedule. It’s relaxed and personal — just the beginning of a strong working relationship.`,
+    icon: '/images/icons/starter-icon1.svg',
     iconClass: 'styled-icon',
   },
   {
-    title: 'Brand Evolution',
-    subtitle: 'Refining your identity for greater impact.',
-    description: 'We evolve your brand to speak to a larger audience while staying true to your core values.',
-    icon: '/images/icons/growth-icon2.svg',
+    title: 'Step 2: Deep Dive Into Your Vision',
+    subtitle: 'We connect for a discovery session — but we go deeper this time.',
+    description: `Tell us what you’ve built so far, the challenges you face, and the growth you envision. We’ll uncover what’s holding you back and what’s possible with the right tools and guidance.`,
+    icon: '/images/icons/starter-icon1.svg',
     iconClass: 'styled-icon',
   },
   {
-    title: 'Enhanced Launch Assets',
-    subtitle: 'Taking your launch to the next level.',
-    description: 'Advanced Social Media Kit. Custom Business Materials. Pro Email Configuration and Automation.',
-    icon: '/images/icons/growth-icon3.svg',
+    title: 'Step 3: Strategy, Structure & Brand Foundation',
+    subtitle: 'Now we start building your business engine.',
+    description: `
+      <strong>Starter essentials included:</strong><br><br>
+      🔹 Business registration assistance (if needed)<br>
+      🔹 Strategy session to align your goals<br>
+      🔹 Brand identity planning and positioning<br><br>
+      <strong>Growth-level upgrades:</strong><br><br>
+      ✦ <strong>Full Brand Strategy & Positioning Document</strong> – your long-term guide<br>
+      ✦ <strong>Messaging & Tone Guide</strong> – voice consistency across channels<br>
+      ✦ <strong>Google Workspace Setup</strong> – professional tools for email, storage, collaboration<br>
+      ✦ <strong>CRM & Contact Forms (Tally, Notion, etc.)</strong> – organize your leads and client info<br>
+      ✦ <strong>Newsletter Platform Setup</strong> – ready to collect and email your audience<br>
+      ✦ <strong>Company Onboarding Docs</strong> – SOPs, welcome kits, team materials<br><br>
+      This step aligns your brand with powerful systems and strategy, ready for scaling.
+    `,
+    icon: '/images/icons/starter-icon1.svg',
     iconClass: 'styled-icon',
   },
   {
-    title: 'Comprehensive Digital Presence',
-    subtitle: 'Maximizing your online visibility.',
-    description: 'Strategic social media campaigns. Website optimization and content marketing setup.',
-    icon: '/images/icons/growth-icon4.svg',
+    title: 'Step 4: Setup, Branding & Digital Presence',
+    subtitle: 'Now we make your brand fully visible and functional — online and offline.',
+    description: `
+      <strong>Starter deliverables included:</strong><br><br>
+      🔹 Logo Design + Brand Manual<br>
+      🔹 Social Media Starter Kit (banners, bios, 4 templates)<br>
+      🔹 Business Card, Letterhead, Flyers<br>
+      🔹 Company Email Setup + Signature<br>
+      🔹 Social Media Profile Setup<br>
+      🔹 Branded Templates (Invoices, Proposals)<br><br>
+      <strong>Growth-level additions:</strong><br><br>
+      ✦ <strong>Website Setup</strong> – up to 5 pages + blog-ready option<br>
+      ✦ <strong>Website Training + Handover Kit</strong> – so you're empowered, not dependent<br>
+      ✦ <strong>Advanced Social Media Optimization</strong> – upgraded visibility and SEO<br>
+      ✦ <strong>Branded Company Onboarding Docs</strong> – for staff or collaborators<br>
+      ✦ <strong>Newsletter System Ready to Go</strong> – email list growth starts now<br><br>
+      Your business now looks, feels, and operates like a pro brand — everywhere it matters.
+    `,
+    icon: '/images/icons/starter-icon1.svg',
     iconClass: 'styled-icon',
   },
   {
-    title: 'Premium Ongoing Support',
-    subtitle: 'Dedicated support for sustained growth.',
-    description: 'Social Media Management (Full). Priority Phone & Email Support. Marketing Strategy Consulting.',
-    icon: '/images/icons/growth-icon5.svg',
+    title: 'Step 5: Ongoing Growth Support (Included)',
+    subtitle: 'We don’t disappear. We grow with you — every month.',
+    description: `
+      ✅ <strong>8 Custom Social Media Posts/Month</strong> – designed and written for your audience<br>
+      ✅ <strong>1 Animated Story or Reel</strong> – professional, engaging video content<br>
+      ✅ <strong>1 Motion Ad</strong> – designed for campaigns or promotions<br>
+      ✅ <strong>Branding Add-ons</strong> – tweaks, seasonal changes, or feature extensions<br>
+      ✅ <strong>Newsletter Assistance</strong> – content creation + formatting help<br>
+      ✅ <strong>Monthly Strategy Check-Ins</strong> – to review progress and adjust tactics<br>
+      ✅ <strong>Basic Website Updates</strong> – minor content changes and upkeep<br>
+      ✅ <strong>Priority Email Support</strong> – fast answers when you need them<br><br>
+      💰 <strong>GHS 1,000/month – all inclusive</strong><br>
+      You get the systems, the visuals, and the monthly push to keep moving forward.
+    `,
+    icon: '/images/icons/starter-icon1.svg',
     iconClass: 'styled-icon',
   },
 ];
@@ -45,24 +83,19 @@ const growthSteps = [
 const HowItWorksModalGrowth = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
+  const [direction, setDirection] = useState(1);
 
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
+    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+    return () => (document.body.style.overflow = 'auto');
   }, [isOpen]);
 
   const handleNext = () => {
-    if (currentStep < growthSteps.length - 1) {
+    if (currentStep < steps.length - 1) {
+      setDirection(1);
       setCurrentStep(prev => prev + 1);
     } else {
       closeModal();
@@ -71,11 +104,13 @@ const HowItWorksModalGrowth = () => {
 
   const handlePrev = () => {
     if (currentStep > 0) {
+      setDirection(-1);
       setCurrentStep(prev => prev - 1);
     }
   };
 
   const handleStepClick = (index) => {
+    setDirection(index > currentStep ? 1 : -1);
     setCurrentStep(index);
   };
 
@@ -88,7 +123,6 @@ const HowItWorksModalGrowth = () => {
         exit={{ opacity: 0, scale: 0.8 }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
       >
-        {/* Close Button at the Top Right */}
         <div className="howitworks-topbar">
           <h2 className="modal-title">How it works – Growth Plan</h2>
           <button className="close-button" onClick={closeModal}>
@@ -96,9 +130,8 @@ const HowItWorksModalGrowth = () => {
           </button>
         </div>
 
-        {/* Stepper with clickable numbers */}
         <div className="stepper">
-          {growthSteps.map((_, index) => (
+          {steps.map((_, index) => (
             <div key={index} className="step-wrapper">
               <div
                 className={`step-circle ${index === currentStep ? 'active' : ''}`}
@@ -106,49 +139,49 @@ const HowItWorksModalGrowth = () => {
               >
                 {index + 1}
               </div>
-              {index !== growthSteps.length - 1 && <div className="step-line"></div>}
+              {index !== steps.length - 1 && <div className="step-line"></div>}
             </div>
           ))}
         </div>
 
-        {/* Step Content */}
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={currentStep}
-            initial={{ opacity: 0, x: 50 }}
+            custom={direction}
+            initial={{ opacity: 0, x: direction === 1 ? 50 : -50 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
+            exit={{ opacity: 0, x: direction === 1 ? -50 : 50 }}
             transition={{ duration: 0.4 }}
             className="step-content"
           >
             <div className="step-card">
-              {/* Title and Icon */}
               <div className="step-heading">
                 <img
-                  src={growthSteps[currentStep].icon}
+                  src={steps[currentStep].icon}
                   alt="Step Icon"
-                  className={`step-icon ${growthSteps[currentStep].iconClass || ''}`}
+                  className={`step-icon ${steps[currentStep].iconClass || ''}`}
                 />
                 <div className="step-titles">
-                  <h3>{growthSteps[currentStep].title}</h3>
-                  <h4>{growthSteps[currentStep].subtitle}</h4>
+                  <h3>{steps[currentStep].title}</h3>
+                  <h4>{steps[currentStep].subtitle}</h4>
                 </div>
               </div>
 
-              {/* Description */}
-              <p>{growthSteps[currentStep].description}</p>
+              <div
+                className="step-description"
+                dangerouslySetInnerHTML={{ __html: steps[currentStep].description }}
+              />
             </div>
           </motion.div>
         </AnimatePresence>
 
-        {/* Buttons */}
         <div className="step-buttons">
           {currentStep !== 0 && (
             <button className="prev-btn" onClick={handlePrev}>
               <img src="/images/icons/left-circle.svg" alt="Previous" />
             </button>
           )}
-          {currentStep !== growthSteps.length - 1 && (
+          {currentStep !== steps.length - 1 && (
             <button className="next-btn" onClick={handleNext}>
               <img src="/images/icons/right-circle.svg" alt="Next" />
             </button>
@@ -175,3 +208,5 @@ const HowItWorksModalGrowth = () => {
 };
 
 export default HowItWorksModalGrowth;
+
+

@@ -3,6 +3,7 @@
   padding: 80px 24px;
   background: linear-gradient(to bottom, #ffffff, #FFEDD0);
   text-align: center;
+  overflow-x: hidden;
 }
 
 .footer-wrapper {
@@ -28,6 +29,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 2rem;
+  color: #ffffff !important;
 }
 
 .footer-about {
@@ -37,11 +39,10 @@
   color: #ffffff !important;
 }
 
-
-.footer-about p {
-  
+.footer-top p {
   color: #d3cdcd !important;
 }
+
 .footer-about h4 {
   margin-bottom: 8px;
 }
@@ -75,7 +76,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #ffa500;
+  background-color: #009E9F;
   color: #fff;
   padding: 16px 32px;
   font-size: 18px;
@@ -167,23 +168,51 @@
 /* Responsive tweaks */
 @media screen and (max-width: 768px) {
   .footer-section {
-    padding: 24px 8px;
-    
+    width: 100%;
+    padding: 0px 8px;
   }
-
+  
   .footer-wrapper {
-    padding: 32px;
+    background: #1b1b1b;
+    color: #fff !important;
+    padding: 16px 16px;
+    border-radius: 16px;
+    width: 100%;
     text-align: center;
+    margin: 0;
   }
 
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .footer-top {
+    gap: 1rem;
+  }
+  
+  .footer-about {
+    flex: 1;
+    min-width: 200px;
+    max-width: 700px;
+    color: #ffffff !important;
+  }
+  
+  .footer-about p {
+    color: #d3cdcd !important;
+  }
+  
+  
   .footer-top {
     flex-direction: column;
     align-items: center;
   }
+
   input[type="email"] {
     text-align: center;
   }
-  
+
   .footer-subscribe {
     width: 100%;
   }
@@ -228,5 +257,22 @@
   .footer-policy a {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
+  }
+
+  h4, h5 {
+    font-size: 1.1rem;
+  }
+
+  .footer-about p,
+  .footer-socials span {
+    font-size: 0.95rem;
+  }
+
+  .subscribe-input button {
+    padding: 14px 24px;
+  }
+
+  .footer-brand img.logo {
+    width: 160px;
   }
 }

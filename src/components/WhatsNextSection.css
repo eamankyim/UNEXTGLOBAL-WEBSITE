@@ -8,7 +8,7 @@
   
   /* Section Styling */
   .whats-next-section {
-    background: #ffffff;
+    background: linear-gradient(to bottom, #f9f6f3, #ffffff);
     padding: 60px 20px;
     text-align: center;
   }
@@ -30,7 +30,7 @@
     display: inline-flex;
     align-items: center; /* Align icon and text vertically */
     justify-content: center; /* Align both horizontally centered */
-    background-color: #ffa500;
+    background-color: #009E9F;
     color: #fff;
     padding: 16px 32px;
     font-size: 18px;
@@ -49,7 +49,7 @@
   
   /* Hover Effect */
   .get-started-button:hover {
-    background-color: #e68900; /* Darker orange on hover */
+    background-color: #007979; /* Darker orange on hover */
   }
   
   /* Optional: Icon Styling */
@@ -100,10 +100,19 @@
       margin-bottom: 12px;
     }
     .whats-next-video {
-     
-      margin: 1rem auto;
+      margin: 0rem auto;
+      margin-top: 2rem;
       border: .5rem solid #fff; /* Centers the container horizontally and adds vertical spacing */
+      border-radius: .2rem;
       
+    }
+    
+    .whats-next-video video {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      border-radius: 8px; /* Optional: same as container, or let container clip */
     }
   }
   

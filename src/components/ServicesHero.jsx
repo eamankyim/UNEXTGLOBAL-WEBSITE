@@ -1,23 +1,39 @@
 import React from "react";
-import Image1 from "/images/servicehero1.jpg";
-
+import { motion } from "framer-motion";
+import Image1 from "/images/aboutus.jpg";
 import "./ServicesHero.css";
 
 const ServicesHero = () => {
   return (
     <div className="serviceshero-wrapper">
-      <div className="serviceshero-text">
+      <motion.div
+        className="serviceshero-text"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <h1>
-          Helping <span className="highlight">U</span> become the <span className="highlight">Next</span> big thing
+          Helping <span className="highlight">U</span> become the{" "}
+          <span className="highlight">Next</span> big thing
         </h1>
         <p>
-          We help you find growth opportunities, refine strategies, and scale your business — whether you're rebranding or starting fresh.
+          We help you find growth opportunities, refine strategies, and scale
+          your business — whether you're rebranding or starting fresh.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="serviceshero-image-container">
-        <img src={Image1} alt="Hero Visual" className="serviceshero-image" />
-      </div>
+      <motion.div
+        className="serviceshero-image-container"
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+      >
+        <img
+          src={Image1}
+          alt="Hero Visual"
+          className="serviceshero-image"
+        />
+      </motion.div>
     </div>
   );
 };

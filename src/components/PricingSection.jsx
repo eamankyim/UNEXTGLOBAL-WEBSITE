@@ -47,7 +47,7 @@ const PricingSection = () => {
             </div>
             <div className="pricing-buttons">
             <HowItWorksModalStarter />
-            <GetStartedStarter />
+            <GetStartedFlow2 />
            
             </div>
           </div>
@@ -112,7 +112,7 @@ const PricingSection = () => {
             </div>
             <div className="pricing-buttons">
             <HowItWorksModalScale />
-              <button className="btn-primary">Get started</button>
+            <GetStartedFlow2 />
             </div>
           </div>
         </div>

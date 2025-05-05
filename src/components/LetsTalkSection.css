@@ -6,6 +6,23 @@
 }
 
 
+.LetsTalk-section .cta .book-a-call-button{
+  margin-top: 1rem;
+  background: #009E9F;
+  font-size: 16px;
+  border-radius: 4px;
+  padding: 0.8rem 2rem;
+  transition: transform 0.2s ease !important;
+
+}
+
+
+
+.LetsTalk-section .cta .book-a-call-button:hover {
+  
+  transform: scale(1.02) !important;
+  background: #00b66a;
+}
 @media (max-width:900px) {
   .LetsTalk-section {
 

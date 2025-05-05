@@ -11,6 +11,7 @@ import FloatingImpactSection from "../components/FloatingImpactSection";
 import ServicesSection from "../components/ServicesSection";
 import TeamHighlightSection from "../components/TeamHighlightSection";
 import WiggleCardSection from "../components/WiggleCardSection";
+import CardsSection from "../components/CardsSection";
 
 
 
@@ -19,7 +20,7 @@ const Services = () => {
     <>
    
     <WiggleCardSection />
-    <ServicesSection />
+    <CardsSection />
     <TeamHighlightSection />
     <FaqSection />
 

@@ -1,5 +1,10 @@
 import React from 'react';
-import './FooterSection.css'; // Importing the CSS file
+import './FooterSection.css';
+
+import logo from '../../images/icons/unex-logo.svg';
+import facebookIcon from '../../images/icons/facebook-02.png';
+import linkedinIcon from '../../images/icons/linkedin-01.png';
+import youtubeIcon from '../../images/icons/youtube.png';
 
 const FooterSection = () => {
   return (
@@ -7,45 +12,39 @@ const FooterSection = () => {
       <div className="footer-wrapper">
         <div className="footer-container">
           <div className="footer-top">
-            <div className="footer-about">
+        
               <h4>About us</h4>
               <p>
-                Unext is an innovative e-commerce platform dedicated to empowering businesses
+                Unext is an innovative business solutions provider dedicated to empowering businesses
                 through trust and technology. Our mission is to provide a secure, scalable,
                 and user-friendly environment where your business can thrive.
               </p>
-            </div>
-            <div className="footer-subscribe">
-              <label htmlFor="email">Email</label>
-              <div className="subscribe-input">
-                <input type="email" id="email" placeholder="example@mail.com" />
-                <button type="submit">Submit</button>
-              </div>
-            </div>
+         
+           
           </div>
 
           <hr />
 
           <div className="footer-middle">
             <div className="footer-brand">
-              <img src="images/icons/unex-logo.svg" alt="uNext logo" className="logo" />
+              <img src={logo} alt="uNext logo" className="logo" />
             </div>
             <div className="footer-socials">
               <h5>Connect with us</h5>
               <div className="social-icons">
                 <a href="#">
                   <i className="icon-facebook">
-                    <img src="images/icons/facebook-02.png" alt="Facebook icon" />
+                    <img src={facebookIcon} alt="Facebook icon" />
                   </i>
                 </a>
                 <a href="#">
                   <i className="icon-linkedin">
-                    <img src="images/icons/linkedin-01.png" alt="LinkedIn icon" />
+                    <img src={linkedinIcon} alt="LinkedIn icon" />
                   </i>
                 </a>
                 <a href="#">
                   <i className="icon-youtube">
-                    <img src="images/icons/youtube.png" alt="YouTube icon" />
+                    <img src={youtubeIcon} alt="YouTube icon" />
                   </i>
                 </a>
                 <span>@unextglobal</span>
@@ -54,11 +53,11 @@ const FooterSection = () => {
             <div className="footer-links">
               <h5>Quick links</h5>
               <nav>
-                <a href="#">Home</a> |
-                <a href="#">Solutions</a> |
-                <a href="#">Products</a> |
-                <a href="#">About</a> |
-                <a href="#">Contact us</a>
+                <a  href="/">Home</a> |
+                <a href="/about">About</a> |
+                <a href="/services">Solutions</a> |
+                <a href="/pricing">Pricing</a> |
+                <a  href="https://wa.me/233536787174?text=Hello%20Unext%2C%20I%27m%20interested%20in%20your%20services.">Contact us</a>
               </nav>
             </div>
           </div>
@@ -66,7 +65,7 @@ const FooterSection = () => {
           <hr />
 
           <div className="footer-bottom">
-            <p>&copy; 2024 uNext, All rights reserved</p>
+            <p>&copy; 2025 UNext, All rights reserved</p>
             <div className="footer-policy">
               <a href="#">Terms</a>
               <a href="#">Privacy</a>
@@ -80,3 +79,5 @@ const FooterSection = () => {
 };
 
 export default FooterSection;
+
+

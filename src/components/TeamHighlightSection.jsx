@@ -2,6 +2,7 @@ import React from "react";
 import "./TeamHighlightSection.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { motion } from "framer-motion";
+import GetStartedFlowCustomBtn from "./GetStartedFlowCustomBtn";
 
 export default function TeamHighlightSection() {
   return (
@@ -32,15 +33,9 @@ export default function TeamHighlightSection() {
           help you scale, stand out, and succeed
         </motion.p>
 
-        <motion.a
-          href="/contact"
-          className="cta-button"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-        >
-          Contact us <i className="fas fa-arrow-right"></i>
-        </motion.a>
+
+         <GetStartedFlowCustomBtn />
+       
       </div>
     </motion.section>
   );

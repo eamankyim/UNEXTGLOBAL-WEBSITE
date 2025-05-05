@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import LadyImage from "/images/cslady.png";
 import { FiChevronRight, FiChevronDown } from "react-icons/fi";
 import "./WhatWeStandFor.css";
@@ -27,7 +28,7 @@ const values = [
 ];
 
 const WhatWeStandFor = () => {
-  const [openIndex, setOpenIndex] = useState(0); // First accordion open by default
+  const [openIndex, setOpenIndex] = useState(0);
 
   const toggleAccordion = (index) => {
     setOpenIndex(index === openIndex ? -1 : index);
@@ -35,43 +36,71 @@ const WhatWeStandFor = () => {
 
   return (
     <div className="whatwe-wrapper">
-      <div className="whatwe-inner-container">
-      <div className="top-card">
-        <h2>What we stand for</h2>
-        <p>
-          At uNext, everything we do is rooted in clarity, collaboration, and a real drive to help businesses grow. These values guide how we work, who we work with, and what we deliver.
-        </p>
-      </div>
+      <motion.div
+        className="whatwe-inner-container"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="top-card">
+          <h2>What we stand for</h2>
+          <p>
+            At uNext, everything we do is rooted in clarity, collaboration, and a real drive to help businesses grow. These values guide how we work, who we work with, and what we deliver.
+          </p>
+        </div>
 
-      <div className="whatwe-container">
-        <div className="whatwe-left">
-          <div className="accordion">
-            {values.map((item, index) => (
-              <div
-                className={`accordion-item ${openIndex === index ? "open" : ""}`}
-                key={index}
-                onClick={() => toggleAccordion(index)}
-              >
-                <div className="accordion-title">
-                  <span className={`bullet-icon ${openIndex === index ? "active" : ""}`} />
-                  <h4>{item.title}</h4>
-                  <span className="accordion-icon">
-                    {openIndex === index ? <FiChevronDown /> : <FiChevronRight />}
-                  </span>
-                </div>
-                {openIndex === index && item.content && (
-                  <div className="accordion-content">{item.content}</div>
-                )}
-              </div>
-            ))}
+        <div className="whatwe-container">
+          <div className="whatwe-left">
+            <div className="accordion">
+              {values.map((item, index) => (
+                <motion.div
+                  className={`accordion-item ${openIndex === index ? "open" : ""}`}
+                  key={index}
+                  layout
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  onClick={() => toggleAccordion(index)}
+                >
+                  <div className="accordion-title">
+                    <span className={`bullet-icon ${openIndex === index ? "active" : ""}`} />
+                    <h4>{item.title}</h4>
+                    <span className="accordion-icon">
+                      {openIndex === index ? <FiChevronDown /> : <FiChevronRight />}
+                    </span>
+                  </div>
+
+                  <AnimatePresence>
+                    {openIndex === index && (
+                      <motion.div
+                        className="accordion-content"
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        {item.content}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div className="whatwe-right">
-          <img src={LadyImage} alt="Customer Success Lady" />
+          <motion.div
+            className="whatwe-right"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <img src={LadyImage} alt="Customer Success Lady" />
+          </motion.div>
         </div>
-      </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
