@@ -8,6 +8,7 @@ import Pricing from "./pages/Pricing";
 import FooterSection from './components/FooterSection';
 import About from "./pages/About";
 import ScrollToTop from "./components/ScrollToTop"; // ✅ import here
+import LegalPage from "./components/LegalPage";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/legalPage" element={<LegalPage />} /> {/* New route for LegalPage */}
           <Route path="*" element={<div>404 - Not Found</div>} />
         </Routes>
         <FooterSection />

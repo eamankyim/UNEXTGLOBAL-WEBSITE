@@ -41,7 +41,7 @@ const PricingSection = () => {
           <div className="pricing-card">
             <h3>Starter</h3>
             <p className="pricing-subtitle">Perfect for small businesses or personal brands starting out</p>
-            <h4 className="pricing-price">GHS 300/month</h4>
+            <h4 className="pricing-price">GHS 295/month</h4>
             <div className="pricing-features">
               <FeatureItem text="Brand discovery session" />
               <FeatureItem text="Logo design + brand manual" />
@@ -69,7 +69,7 @@ const PricingSection = () => {
             <div className="pricing-badge">Most popular</div>
             <h3>Growth</h3>
             <p className="pricing-subtitle">Ideal for businesses ready to grow online with more polish & tools</p>
-            <h4 className="pricing-price">GHS 1000/month</h4>
+            <h4 className="pricing-price">GHS 990/month</h4>
             <div className="pricing-features">
               <FeatureItem text="Everything in Starter" />
               <FeatureItem text="Full brand strategy & positioning document" />
@@ -100,7 +100,7 @@ const PricingSection = () => {
           <div className="pricing-card">
             <h3>Scale</h3>
             <p className="pricing-subtitle">For growing brands that need advanced content, automation & insights</p>
-            <h4 className="pricing-price">GHS 2000/month</h4>
+            <h4 className="pricing-price">GHS 1,980/month</h4>
             <div className="pricing-features">
               <FeatureItem text="Everything in Growth" />
               <FeatureItem text="Content strategy playbook" />

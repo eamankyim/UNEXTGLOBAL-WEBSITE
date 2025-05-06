@@ -2,44 +2,54 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './WiggleCardSection.css';
 
+// Image imports
+import trophyIcon from '../assets/trophy.svg';
+import graphIcon from '../assets/graph.svg';
+import starIcon from '../assets/star.svg';
+import cameraIcon from '../assets/camera.svg';
+import moneyIcon from '../assets/money.svg';
+import logoTestIcon from '../assets/logo-test.svg';
+import bounceIcon from '../assets/bounce.svg';
+import followersIcon from '../assets/followers.svg';
+
 const cards = [
   {
-    icon: 'images/icons/trophy.svg',
+    icon: trophyIcon,
     title: 'Your chatbot handled 80% of customer queries',
     description: 'Let’s fine-tune responses for even higher satisfaction',
   },
   {
-    icon: 'images/icons/graph.svg',
+    icon: graphIcon,
     title: 'Traffic spike after your last blog post: +67%',
     description: 'That topic hit — let’s write a follow-up',
   },
   {
-    icon: 'images/icons/star.svg',
+    icon: starIcon,
     title: 'NPS score increased to 8.7',
     description: 'Your customer experience is improving',
   },
   {
-    icon: 'images/icons/camera.svg',
+    icon: cameraIcon,
     title: 'Your reels reach is now 15k+ per post',
     description: 'Short-form video is working for you.',
   },
   {
-    icon: 'images/icons/money.svg',
+    icon: moneyIcon,
     title: 'You made GHC87,000.00 profit this week',
     description: 'This is 500% increase compared to last week',
   },
   {
-    icon: 'images/icons/logo-test.svg',
+    icon: logoTestIcon,
     title: 'New logo test outperformed old one by 3x',
     description: 'You’re building stronger visual recognition',
   },
   {
-    icon: 'images/icons/bounce.svg',
+    icon: bounceIcon,
     title: 'Your bounce rate dropped 18%',
     description: 'Your new content strategy is working',
   },
   {
-    icon: 'images/icons/followers.svg',
+    icon: followersIcon,
     title: 'Followers up by 800 this week',
     description: 'Let’s introduce a loyalty push or campaign',
   },
