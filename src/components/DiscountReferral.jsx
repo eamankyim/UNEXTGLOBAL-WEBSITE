@@ -68,10 +68,11 @@ const DiscountReferral = () => {
     setIsLoading(true); // Start loading when the form is submitted
 
     const templateParams = {
-      to_name: 'UNEXT',
-      from_name: 'Referral Program',
-      message: `A new referral has entered the WhatsApp number: ${whatsappNumber}`,
-    };
+        name: 'Referral Program',
+        phone: whatsappNumber,
+        time: new Date().toLocaleString(),
+      };
+      
 
     // Send the email using EmailJS
     emailjs
