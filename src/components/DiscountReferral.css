@@ -1,0 +1,396 @@
+.DiscountContainer {
+    position: relative;
+    background: #ffffff;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  .background-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* This is behind content but still visible */
+    pointer-events: none;
+    overflow: hidden;
+  }
+  
+  .shape1 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600px;
+  }
+  
+  .shape2 img {
+    position: absolute;
+    top: 200px;
+    right: 0;
+    width: 300px;
+  }
+  
+  /* Make sure main content sits above */
+  .discount-referral-wrapper,
+  .referral-section {
+    position: relative;
+    z-index: 1;
+  }
+.discount-referral-wrapper {
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 3rem 1rem;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.discount-section {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.discount-section h1 span {
+  font-size: 13rem;
+  line-height: 13rem;
+  font-weight: 800;
+  color: #001A2B;
+}
+
+.discount-section h2 {
+  font-size: 1.5rem;
+  color: #0B0B22;
+  margin-top: -10px;
+}
+
+.discount-section p {
+  margin: 2rem auto;
+  color: #333;
+  max-width: 600px;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.badges {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1rem 0;
+  font-size: 1rem;
+  color: #000000;
+}
+.badges i {
+    color: #FF9D00; /* or any color you like */
+    margin-right: 0.5rem;
+  }
+.giftbox {
+  margin-top: 2rem;
+  width: 200px;
+  max-width: 250px;
+}
+
+.referralContainer {
+    margin: 0 auto;
+    max-width: 1520px;
+    padding: 0 40px;
+}
+.referral-section {
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    max-width: 1440px;
+    width: 100%;
+    padding: 5rem 0rem 5rem 5rem; 
+  
+    overflow: visible;
+    background-color: rgba(0, 26, 43, 1);
+    background-image: url('/images/doodle.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: soft-light;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+.referral-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: #fff;
+ 
+}
+
+.referral-content {
+  flex: 1 1 300px;
+  padding: 1rem;
+ 
+}
+
+.referral-content h3 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.referral-content h4 {
+  font-size: 1.9rem;
+  color: #FF9D00;
+  margin-bottom: 1rem;
+}
+
+.referral-content p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.7rem;
+ 
+  color: #ffffff;
+  
+}
+
+.referral-content input {
+  width: 300px;
+  padding: 1rem;
+  border: none;
+  font-size: 18px;
+  border-radius: 4px 0px 0px 4px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.referral-content button {
+  background-color: #FF9D00;
+  color: white;
+  font-size: 18px;
+  border: none;
+  padding: 16px;
+  border-radius: 0px 4px 4px 0px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.referral-image {
+    flex: 1 1 200px;
+    position: relative;
+    padding: 2rem;
+  }
+  
+  .referral-image img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(0%, 50%); /* Optional: nudge it even beyond the edge */
+    max-width: none; /* Allow overflow beyond container */
+    height: auto;
+    z-index: 1;
+  }
+
+
+
+  /* Overlay styles */
+.getstarted-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);  /* Semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 9999; /* Ensure it sits above other content */
+  }
+
+
+
+  /* Add loading style to the input field */
+input.loading {
+    background-color: rgba(0, 26, 43, 1); /* Light gray background while loading */
+    cursor: not-allowed;
+    opacity: 0.7;
+    color: #fff;
+    transition: background 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+}
+
+/* Button styling */
+button:disabled {
+  
+    cursor: not-allowed;
+    color: #fff;
+    pointer-events: none; /* Ensure no interaction when disabled */
+}
+
+/* Optional: Add a loading spinner to the button */
+button:disabled::after {
+   
+    border: 2px solid #fff;
+  
+    border-top: 2px solid transparent;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+  
+}
+
+/* Keyframes for spinner animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Ensure the input and button have smooth loading transitions */
+input,
+button {
+    transition: all 0.3s ease; /* Smooth transition for input and button states */
+}
+
+
+@media (max-width: 1024px) {
+    .discount-section h1 span {
+      font-size: 9rem;
+      line-height: 9rem;
+    }
+  
+    .discount-section p {
+      font-size: 1.2rem;
+    }
+  
+    .referral-content h3 {
+      font-size: 2rem;
+    }
+  
+    .referral-content h4 {
+      font-size: 1.5rem;
+    }
+  
+
+    .referral-card {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .referral-content {
+      text-align: center;
+    }
+  }
+  
+  
+  @media (max-width: 768px) {
+
+
+    .referralContainer {
+        margin: 0 auto;
+        max-width: 1520px;
+        padding: 0px;
+    }
+
+    .referral-section {
+        padding: 5rem 0rem 5rem 5rem; 
+     
+    }
+    .discount-section h1 span {
+      font-size: 10rem;
+      line-height: 8rem;
+    }
+  
+    .discount-section h2 {
+      font-size: 1.2rem;
+    }
+  
+    .discount-section p {
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+  
+    .badges {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+  
+    .giftbox {
+      width: 150px;
+    }
+  
+  
+  
+    .referral-content h3 {
+      font-size: 1.8rem;
+    }
+  
+    .referral-content h4 {
+      font-size: 1.3rem;
+    }
+  
+    .referral-content p {
+      font-size: 1rem;
+    }
+  
+    .shape1 img {
+      width: 300px;
+    }
+  
+    .shape2 img {
+      width: 200px;
+      top: 150px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .discount-section h1 span {
+      font-size: 6rem;
+      line-height: 7rem;
+    }
+  
+   
+        .referral-content input,
+        .referral-content button {
+          width: 300px;
+          border-radius: 8px;
+          margin: 0.5rem 0;
+        }
+      
+  
+    .referral-content input,
+    .referral-content button {
+      font-size: 1rem;
+      padding: 0.8rem;
+    }
+
+
+
+}
+
+
+
+@media (max-width: 1300px) {
+    .referral-image {
+      padding: 0;
+    }
+  
+    
+    .referral-section {
+        padding: 5rem 0rem 0rem 0rem;
+
+     
+    }
+    .referral-image img {
+      position: relative; /* Allow it to flow within container */
+      transform: none; /* Remove translate */
+      width: 100%; /* Make image responsive */
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 0px;
+      
+    }
+  }
+  

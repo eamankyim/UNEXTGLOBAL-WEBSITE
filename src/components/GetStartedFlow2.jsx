@@ -95,10 +95,10 @@ const GetStartedFlow2 = () => {
 
     emailjs
       .send(
-        'service_4gwdw66',
+        'service_kpbjj5o',
         'template_f2hxwwv',
         templateParams,
-        'sC-_iyRAcruYtVAkS'
+        'SHdS95AzNfrN1-FXf'
       )
       .then(() => {
         setProgress(99);

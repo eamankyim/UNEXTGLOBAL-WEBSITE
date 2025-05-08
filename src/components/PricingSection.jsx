@@ -2,26 +2,18 @@ import React, { useState } from 'react';
 import HowItWorksModalStarter from './HowItWorksModalStarter';
 import HowItWorksModalGrowth from './HowItWorksModalGrowth';
 import HowItWorksModalScale from './HowItWorksModalScale';
-
-import GetStartedStarter from './GetStartedStarter';
+import GetStartedFlow2 from './GetStartedFlow2';
 import './PricingSection.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
-import GetStartedFlow2 from './GetStartedFlow2';
 
 const PricingSection = () => {
-
-  // State to hold the selected plan for form submission
   const [selectedPlan, setSelectedPlan] = useState('');
 
-  // Tracking function to log which plan is clicked
   const trackPlanClick = (plan) => {
-    // Log to Google Analytics
     if (window.ga) {
       window.ga('send', 'event', 'Pricing', 'click', plan);
     }
-    
-    // Set the selected plan in the state
     setSelectedPlan(plan);
   };
 
@@ -130,10 +122,9 @@ const PricingSection = () => {
         </div>
       </section>
 
-      {/* Hidden Form (for submission) */}
+      {/* Hidden Form (for backend tracking or fallback submission) */}
       <form id="get-started-form" action="your-email-endpoint" method="POST">
         <input type="hidden" name="plan" value={selectedPlan} />
-        {/* Other form fields like name, email, phone */}
       </form>
     </div>
   );
